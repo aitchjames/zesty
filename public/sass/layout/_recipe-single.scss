@@ -1,0 +1,330 @@
+.recipe-masthead {
+    margin: 4rem 0;
+
+    &__content {
+        grid-column: col-start 1 / col-end 4;
+        grid-row: 1 / 2;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+        @media only screen and (max-width: $breakpoint-md) {
+            grid-column: col-start 1 / col-end 8;
+            grid-row: 2 / 3;
+        }
+    }
+
+    &__title {
+        font-weight: 700;
+        font-size: 4.8rem;
+
+        @media only screen and (max-width: $breakpoint-md) {
+                    font-size: calc(4.8rem * 0.75);
+        }
+            
+        @media only screen and (max-width: $breakpoint-sm) {
+            font-size: calc(4.8rem * 0.65);
+        }
+    }
+
+    &__overview-stats { 
+        display: flex;
+
+        &-item {
+            display: flex;
+            align-items: center;
+            margin-right: 2rem;
+
+            @media only screen and (max-width: $breakpoint-sm) {
+                margin-right: 1.5rem;
+                font-size: 1.5rem;
+            }
+    
+            &__span {
+                margin-left: 1rem;
+            }
+        }
+    }
+
+    &__image {
+        grid-column: col-start 5 / col-end 8;
+        grid-row: 1 / 2;
+        display: grid;
+        grid-template-rows: repeat(8, 1fr);
+        grid-template-columns: repeat(8, 1fr);
+
+        @media only screen and (max-width: $breakpoint-md) {
+            grid-column: col-start 1 / col-end 8;
+            grid-row: 1 / 2;
+        }
+
+        &-bg {
+            grid-row: 1 / 8;
+            grid-column: 4 / 9;
+            z-index: 2;
+            // background-color: #E7C1C1;
+            z-index: 1;
+        }
+
+        // &-fg {
+        //     grid-row: 2 / 9;
+        //     grid-column: 1 / 8;
+        //     z-index: 2;
+        //     height: 37rem;
+        //     width: 100%;
+        //     background-size: cover;
+        //     background-position: center;
+        // }
+
+        & img {
+            width: 100%;
+            grid-row: 2 / 9;
+            grid-column: 1 / 8;
+            z-index: 2;
+        }
+    }
+
+    &__actions {
+        margin-top: 2rem;
+    }
+}
+
+.overview-total-rating {
+    font-size: 1.3rem;
+}
+
+.recipe-cooking {
+
+    &-info {
+        // display: grid;
+        // gap: 1.5rem;
+        // grid-template-columns: repeat(auto-fill, minmax(12rem, 1fr));
+        margin: 10rem 0 8rem 0;
+        padding-bottom: 2rem;
+        border-bottom: 1px solid var(--color-grey-3);
+        display: flex;
+        flex-wrap: wrap;
+        grid-column: col-start 1 / col-end 8;
+
+        @media only screen and (max-width: $breakpoint-md) {
+            border-bottom: 0;
+            margin: 4rem 0 3rem 0;
+            display: grid;
+            gap: 1.5rem;
+            grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr));
+        }
+
+        &__item {
+            margin-right: 4rem;
+            margin-bottom: 1rem;
+
+            @media only screen and (max-width: $breakpoint-md) {
+                margin-right: 3rem;
+            }
+
+            & span {
+                color: var(--color-grey-7);
+                margin-left: 0.5rem;
+
+                @media only screen and (max-width: $breakpoint-md) {
+                    margin-left: 0.2rem;
+                    display: block;
+                }
+            }
+        }
+    }
+
+    &-sidebar {
+        grid-column: col-start 1 / col-end 2;
+        margin-right: -5rem;
+
+        @media only screen and (max-width: $breakpoint-md) {
+            grid-column: full-start  / full-end;
+            margin-right: 0;
+        }
+    }
+
+    &-main {
+        grid-column: col-start 4 / col-end 8;
+
+        @media only screen and (max-width: $breakpoint-md) {
+            grid-column: col-start 1 / col-end 8;
+            margin: 2.5rem 0 0 0;
+
+        }
+    }
+
+    &-ingredients {
+        // grid-column: col-start 1 / col-end 2;
+        // grid-row: 3 / 4;
+        width: 100%;
+        padding: 3.5rem 3rem;        
+        background-color: var(--color-grey-2);
+        border-radius: 0.75rem;
+
+        @media only screen and (max-width: $breakpoint-md) {
+            grid-column: full-start  / full-end;
+            padding: 3.5rem 2rem;
+            margin-right: 0;
+        }
+
+        & h2 {
+            font-weight: 700;
+            margin: 0;
+            padding: 0 0 3rem 0;
+        }
+
+        & ul {
+            list-style: none;
+
+            li {
+                // font-size: 1.8rem;
+                margin-bottom: 1.5rem;
+                padding: 0 1.5rem 1rem 0;
+                border-bottom: 2px dotted var(--color-grey-3);
+
+                &:last-of-type {
+                    border-bottom: 0;
+                }
+            }
+        }
+    }
+
+    &-method {
+        // grid-column: col-start 4 / col-end 8;
+        // grid-row: 3 / 6;
+        // margin-left: 2rem;
+        // width: 100%;        
+
+        & h2 {
+            font-weight: 700;
+            margin: 3.5rem 0 0 0;
+            padding: 0 0 3rem 0;
+        }
+
+        & ol {
+            margin-left: 2rem;
+
+            @media only screen and (max-width: $breakpoint-md) {
+                margin-left: 2.8rem;    
+            }
+
+            li {
+                font-size: 1.8rem;
+                margin-bottom: 2.5rem;
+                line-height: 1.75;
+            }
+        }
+    }
+
+    &-tags {
+        grid-column: col-start 1 / col-end 2;
+        align-self: start;
+    }
+
+    &-reviews {
+        grid-column: col-start 4 / col-end 8;
+
+        @media only screen and (max-width: $breakpoint-md) {
+            grid-column: col-start 1 / col-end 8;
+            margin: 2.5rem 0 0 0;
+        }
+
+        &__heading {
+            font-size: 1.6rem;
+            font-family: var(--font-body);
+            background-color: transparent;
+            border: none;
+            width: 100%;
+            margin-bottom: 2rem;
+            padding-bottom: 2rem;
+            display: flex;
+            align-items: center;
+            border-bottom: 1px solid var(--color-grey-3);            
+            cursor: pointer;
+
+            &.hidden svg.bi-chevron-down {
+                transform: rotate(180deg);
+            }
+
+            & h4 {
+                margin: 0;
+                font-weight: 700;
+                font-size: 2rem;
+                margin-right: 2rem;
+            }
+            & svg {
+                margin-right: 1rem;
+                transition: transform 0.2s ease-in-out;
+
+                &.bi-chevron-down {
+                    margin-left: auto;
+                    margin-right: 0;
+                }
+            }
+        }
+
+        &__content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(40rem, 1fr));
+            grid-gap: 3rem;
+            transition: all 0.2s ease-out;
+            visibility: visible;
+            opacity: 1;
+            max-height: 100%;
+
+            @media only screen and (max-width: $breakpoint-md) {
+                grid-template-columns: repeat(auto-fit, minmax(35rem, 1fr));
+            }
+
+            &.hidden {
+                visibility: hidden;
+                opacity: 0;
+                max-height: 0;
+                overflow: hidden;     
+            }
+
+            &-review {
+                padding-bottom: 2rem;
+                border-bottom: 1px solid var(--color-grey-3);
+
+                &:last-of-type {
+                    border-bottom: 0;
+                }
+
+                & .review__user {
+                    display: flex;
+                    margin-bottom: 1.5rem;
+
+                    & .review__photo {
+                        height: 4.5rem;
+                        width: 4.5rem;
+                        border-radius: 50%;
+                        margin-right: 1.5rem;
+                    }
+
+                    & .review__user-details {
+                        display: flex;
+                        flex-direction: column;
+
+                        & .review__user-name {
+                            font-size: 1.4rem;
+                            font-weight: 500;
+                            color: var(--color-grey-9);
+                        }
+
+                        & .review__user-date {
+                            font-size: 1.3rem;
+                            color: var(--color-grey-6);
+                        }
+                    }
+                }
+
+                & .review__text {
+                    color: var(--color-grey-8);
+                }
+            }
+        }
+    }
+
+}

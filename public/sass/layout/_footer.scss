@@ -1,0 +1,126 @@
+.footer {
+    background-color: var(--color-grey-1);
+    font-size: 1.4rem;
+    padding: 6.2rem 0;
+
+    @media only screen and (max-width: $breakpoint-md) {
+        padding: 3.2rem 0;
+    }
+
+    &-top-container {
+        display: flex;
+        padding-bottom: 5rem;
+
+        @media only screen and (max-width: $breakpoint-lg) {
+            flex-direction: column;
+            padding-bottom: 3rem;
+        } 
+    }
+
+    &-company-mission {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        max-width: 22rem;
+        margin-right: 12rem;
+
+        @media only screen and (max-width: $breakpoint-xl) {
+            margin-right: 8rem;
+        }
+
+        @media only screen and (max-width: $breakpoint-lg) {
+            margin-bottom: 4rem;
+        }   
+        
+        @media only screen and (max-width: $breakpoint-md) {
+            margin-bottom: 3rem;
+        } 
+
+        &__logo {
+            height: 4.5rem;
+            width: auto;
+        }
+
+        &__info {
+            margin-top: 2rem;
+            color: var(--color-grey-6);
+            font-size: 1.4rem;
+        }
+    }
+
+    &-links-container {
+        width: 100%;
+        max-width: 70rem;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
+        grid-gap: 2rem;
+        align-items: start;
+
+        @media only screen and (max-width: $breakpoint-lg) {
+            margin-bottom: 3rem;
+            grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+            grid-gap: 3rem;
+        } 
+    }
+
+    &-links-list {
+        display: flex;
+        flex-direction: column;
+
+        &__heading {
+            font-weight: 500;
+            color: var(--color-grey-9);
+        }
+
+        &__item {
+            color: var(--color-grey-6);
+            font-weight: 400;
+            text-decoration: none;
+            margin-top: 1rem;
+
+            &:hover {
+                color: var(--color-grey-7);
+            }
+        }
+    }
+
+    &-ad-container {
+        width: 30rem;
+        background-color: var(--color-grey-3);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 1rem;
+
+        @media only screen and (max-width: $breakpoint-lg) {
+            width: 100%;
+            padding: 3rem;
+        }
+
+        & span {
+            color: var(--color-grey-6);
+        }
+    }
+
+    &-bottom-container {
+        border-top: 1px var(--color-grey-4) solid;
+        padding-top: 3.5rem;
+        font-size: 1.4rem;
+        display: flex;
+        justify-content: space-between;
+
+        @media only screen and (max-width: $breakpoint-lg) {
+            padding-top: 2rem;
+            flex-direction: column;            
+        } 
+
+        & span {
+            color: var(--color-grey-7);
+
+            @media only screen and (max-width: $breakpoint-lg) {
+                margin-top: 1rem;         
+                text-align: center; 
+            }
+        }
+    }
+}

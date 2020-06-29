@@ -7,7 +7,11 @@
         "start": "cross-env NODE_ENV=production node server.js",
         "watch": "nodemon ./server.js --ignore public/",
         "dev": "concurrently 'npm run watch' 'npm run assets' --names '💻,📦' --prefix name",
-        "assets": "webpack -w --display-max-modules 0"
+        "assets": "webpack -w --display-max-modules 0",
+        "watch:sass": "node-sass ./public/sass/main.scss ./public/css/style.css -w",
+        "build:sass": "parcel build ./public/sass/main.scss --public-url ./public/css --out-file style.css",
+        "watch:js": "parcel watch ./public/js/index.js --public-url ./public/js --out-file bundle.js",
+        "build:js": "parcel build ./public/js/index.js --public-url ./public/js --out-file bundle.js"
     },
     "author": "",
     "license": "ISC",
@@ -38,6 +42,8 @@
         "xss-clean": "^0.1.1"
     },
     "devDependencies": {
-        "nodemon": "^2.0.4"
+        "node-sass": "^4.14.1",
+        "nodemon": "^2.0.4",
+        "parcel-bundler": "^1.12.4"
     }
 }

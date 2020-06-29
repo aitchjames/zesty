@@ -1,0 +1,144 @@
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
+
+html {
+    box-sizing: border-box;
+    font-size: 62.5%;
+}
+
+body {
+    font-family: var(--font-body);
+    color: var(--color-dark);
+    font-weight: 400;
+    line-height: 1.6;
+    font-size: 1.6rem;
+    min-width: 320px;
+    overflow-x: hidden;    
+    scroll-behavior: smooth;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    padding-top: 5.5rem;
+
+    &.scroll .nav-wrapper {
+        position: fixed;        
+    }
+}
+
+h1, h2, h3, h4, h5 {
+    margin: 2.75rem 0 1.05rem;
+    font-weight: 400;
+    line-height: 1.15;
+  }
+
+// h1 {
+//     font-size: 4.8rem;
+
+//     @media only screen and (max-width: $breakpoint-md) {
+//         font-size: calc(4.8rem * 0.75);
+//     }
+
+//     @media only screen and (max-width: $breakpoint-sm) {
+//         font-size: calc(4.8rem * 0.65);
+//     }
+// }
+  
+// h2 {
+//     font-size: 3.9rem;
+
+//     @media only screen and (max-width: $breakpoint-md) {
+//         font-size: calc(3.9rem * 0.75);
+//     }
+
+//     @media only screen and (max-width: $breakpoint-sm) {
+//         font-size: calc(3.9rem * 0.65);
+//     }
+// }
+  
+// h3 {
+//     font-size: 3.1rem;
+
+//     @media only screen and (max-width: $breakpoint-md) {
+//         font-size: calc(3.1rem * 0.75);
+//     }
+
+//     @media only screen and (max-width: $breakpoint-sm) {
+//         font-size: calc(3.1rem * 0.65);
+//     }
+// }
+  
+// h4 {
+//     font-size: 2.5rem;
+// }
+  
+// h5 {
+//     font-size: 2rem;
+// }
+
+.main-wrapper {
+    flex: 1 0 auto;
+}
+
+.grid-container {
+    display: grid;
+    //grid-template-rows: 100vh min-content 40vw repeat(3, min-content);
+    grid-template-columns: [full-start] minmax(6rem, 1fr) [center-start] repeat(8, [col-start] minmax(min-content, 16rem) [col-end]) [center-end] minmax(6rem, 1fr) [full-end];
+
+    @media only screen and (max-width: $breakpoint-lg) {
+        //grid-template-rows: 6rem 100vh min-content 40vw repeat(3, min-content);
+        grid-template-columns: [full-start] minmax(2rem, 1fr) [center-start] repeat(8, [col-start] minmax(min-content, 16rem) [col-end]) [center-end] minmax(2rem, 1fr) [full-end];
+    }
+
+    @media only screen and (max-width: $breakpoint-md) {
+        //grid-template-rows: 6rem calc(100vh - 6rem);
+    }
+}
+
+.page-container {    
+    display: grid;
+    grid-template-rows: 90vh min-content;
+    grid-template-columns: [full-start] minmax(6rem, 1fr) [center-start] repeat(8, [col-start] minmax(min-content, 14rem) [col-end]) [center-end] minmax(6rem, 1fr) [full-end];
+
+    @media only screen and (max-width: $breakpoint-lg) {
+        grid-template-rows: 90vh min-content;
+        grid-template-columns: [full-start] minmax(3rem, 1fr) [center-start] repeat(8, [col-start] minmax(min-content, 14rem) [col-end]) [center-end] minmax(3rem, 1fr) [full-end];
+    }
+
+    @media only screen and (max-width: $breakpoint-md) {
+        //grid-template-rows: 6rem calc(100vh - 6rem);
+    }
+}
+
+.content-grid {
+    display: grid;
+    grid-template-columns: [center-start] repeat(8, [col-start] minmax(min-content, 16rem) [col-end]) [center-end];
+
+    @media only screen and (max-width: $breakpoint-lg) {
+        grid-template-columns: [center-start] repeat(8, [col-start] minmax(min-content, 16rem) [col-end]) [center-end];
+    }
+
+    @media only screen and (max-width: $breakpoint-md) {
+        //grid-template-rows: 6rem calc(100vh - 6rem);
+    }
+}
+
+.container {
+    margin: 0px auto;
+    max-width: 100%;
+    min-width: 32rem;
+    width: 128rem;
+
+    @media only screen and (max-width: $breakpoint-xl) {
+        padding: 0 2rem;
+    }
+}
+
+::selection {
+    color: var(--color-light);
+    background: var(--color-primary);
+}

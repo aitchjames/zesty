@@ -1,0 +1,33 @@
+:root {
+    // Breakpoints
+    --breakpoint-sm: 640px;
+    --breakpoint-md: 768px;
+    --breakpoint-lg: 1024px;
+    --breakpoint-xl: 1280px;
+    // Font
+    --font-heading: 'Inter', sans-serif;
+    --font-body: 'Inter', sans-serif;
+    // Colours
+    --color-primary: rgb(246, 81, 55);
+    --color-primary-dark: #d82f23;
+    --color-secondary: rgba(251, 109, 58, 1);
+
+    --color-light:rgba(255, 255, 255, 1);
+    --color-dark: rgba(33, 37, 41, 1);
+
+    --color-grey-1: #f7fafc;
+    --color-grey-2: #edf2f7;
+    --color-grey-3: #e2e8f0;
+    --color-grey-4: #cbd5e0;
+    --color-grey-5: #a0aec0;
+    --color-grey-6: #718096;
+    --color-grey-7: #4a5568;
+    --color-grey-8: #2d3748;
+    --color-grey-9: #1a202c;
+    
+}
+
+$breakpoint-sm: 640px;
+$breakpoint-md: 768px;
+$breakpoint-lg: 1024px;
+$breakpoint-xl: 1280px;
