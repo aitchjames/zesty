@@ -9,7 +9,7 @@ router.use(authController.protect);
 router
     .route('/')
     .get(reviewController.getAllReviews)
-    .post(authController.restrictTo('user'), reviewController.setTourUserIds, reviewController.createReview);
+    .post(authController.restrictTo('user'), reviewController.setRecipeUserIds, reviewController.createReview);
 
 router
     .route('/:id')

@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=no">
+    <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
+
+    <title><%= typeof(title) == "undefined" ? 'Zesty Recipes' : `Zesty Recipes | ${title}` %></title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body class="" data-alert="">
+    <header class="nav-wrapper">
+        <div class="nav-inner">
+            <div class="nav-logo">
+                <a href="#!"><img src="images/zesty-logo-nav-01.svg" alt="Zesty Logo"></a>
+            </div>
+            <button class="nav-mobile-button">
+                <svg class="nav-mobile-button-menu" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd" d="M2.5 11.5A.5.5 0 0 1 3 11h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4A.5.5 0 0 1 3 7h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4A.5.5 0 0 1 3 3h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z" />
+                </svg>
+                <svg class="nav-mobile-button-x" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd" d="M11.854 4.146a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708-.708l7-7a.5.5 0 0 1 .708 0z" />
+                    <path fill-rule="evenodd" d="M4.146 4.146a.5.5 0 0 0 0 .708l7 7a.5.5 0 0 0 .708-.708l-7-7a.5.5 0 0 0-.708 0z" />
+                </svg>
+            </button>
+            <nav class="nav-menu__left" role="navigation" aria-label="Main">
+                <ul class="nav-menu">
+                    <li class="nav-menu__item">
+                        <a href="#!">
+                            Discover
+                            <svg>
+                                <use xlink:href="images/icons.svg#icon-chevron-down"></use>
+                            </svg>
+                        </a>
+                        <div class="nav-menu__panel">
+                            <div class="nav-menu__panel-grid">
+                                <div class="nav-menu__panel-grid-item">
+                                    <img src="images/desktopnav-all-recipes.jpg" alt="">
+                                    <h4>All recipes</h4>
+                                    <p>Get inspired with our exciting collection of recipes</p>
+                                </div>
+                                <div class="nav-menu__panel-grid-item">
+                                    <img src="images/desktopnav-our-favourites.jpg" alt="">
+                                    <h4>Our favourites</h4>
+                                    <p>Our favourite recipes we cant get enough of</p>
+                                </div>
+                                <div class="nav-menu__panel-grid-item">
+                                    <img src="images/desktopnav-our-blog.jpg" alt="">
+                                    <h4>Zesty blog</h4>
+                                    <p>News and announcements for all things Zesty</p>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </nav>
+            <nav class="nav-menu__right" role="navigation" aria-label="Account">
+                <ul class="nav-menu">
+                    <li class="nav-menu__item">
+                        <form action="#" class="nav-search__desktop nav-search__wrapper">
+                            <svg class="nav-search__icon" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" d="M10.442 10.442a1 1 0 0 1 1.415 0l3.85 3.85a1 1 0 0 1-1.414 1.415l-3.85-3.85a1 1 0 0 1 0-1.415z" />
+                                <path fill-rule="evenodd" d="M6.5 12a5.5 5.5 0 1 0 0-11 5.5 5.5 0 0 0 0 11zM13 6.5a6.5 6.5 0 1 1-13 0 6.5 6.5 0 0 1 13 0z" />
+                            </svg>
+                            <input type="text" class="nav-search__input" placeholder="Search Recipes" autocomplete="off">
+                        </form>
+                    </li>
+                    <li class="nav-menu__item"><a href="#!">Log in</a></li>
+                    <li class="nav-menu__item"><a href="#!" class="button">Sign up</a></li>
+                </ul>
+            </nav>
+        </div>
+        <nav class="nav-menu__mobile">
+            <form action="#" class="nav-search__mobile nav-search__wrapper">
+                <svg class="nav-search__icon" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd" d="M10.442 10.442a1 1 0 0 1 1.415 0l3.85 3.85a1 1 0 0 1-1.414 1.415l-3.85-3.85a1 1 0 0 1 0-1.415z" />
+                    <path fill-rule="evenodd" d="M6.5 12a5.5 5.5 0 1 0 0-11 5.5 5.5 0 0 0 0 11zM13 6.5a6.5 6.5 0 1 1-13 0 6.5 6.5 0 0 1 13 0z" />
+                </svg>
+                <input type="text" class="nav-search__input" placeholder="Search Recipes" autocomplete="off">
+            </form>
+            <div class="nav-menu__mobile-main">
+                <div class="nav-mobile__link">
+                    <button class="nav-mobile__link-collapse">
+                        <span>Discover</span>
+                        <svg class="bi bi-chevron-down" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z" />
+                        </svg>
+                    </button>
+                    <div class="nav-mobile__dropdown">
+                        <div><a class="nav-mobile__dropdown-item" href="#!">All recipes</a></div>
+                        <div><a class="nav-mobile__dropdown-item" href="#!">Our favourites</a></div>
+                        <div><a class="nav-mobile__dropdown-item" href="#!">Zesty blog</a></div>
+                    </div>
+                </div>
+            </div>
+            <div class="nav-menu__mobile-profile">
+                <a class="nav-menu__mobile-user" href="">
+                    <img src="images/user-avatar.jpg" width="40" height="40" alt="">
+                    <span>Hayden Morran</span>
+                </a>
+                <div class="nav-menu__mobile-profile-links">
+                    <a class="nav-menu__mobile-profile-link" href="#!">My profile</a>
+                    <a class="nav-menu__mobile-profile-link" href="#!">Liked recipes</a>
+                    <a class="nav-menu__mobile-profile-link" href="#!">My collections</a>
+                    <a class="nav-menu__mobile-profile-link" href="#!">Account settings</a>
+                    <a class="nav-menu__mobile-profile-link" href="#!">Log out</a>
+                </div>
+            </div>
+            <!-- <div class="nav-menu__mobile-signup">
+                <a class="button" href="#!">Sign up</a>
+                <span>Already a member? <a href="#!">Log in</a></span>
+            </div> -->
+        </nav>
+    </header>

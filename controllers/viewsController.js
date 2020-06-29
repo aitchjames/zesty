@@ -1,5 +1,5 @@
-const Tour = require('../models/tourModel');
-const User = require('../models/userModel');
+const Recipe = require('../models/recipeModel');
+// const User = require('../models/userModel');
 const catchAsync = require('../utils/catchAsync');
 const AppError = require('../utils/appError');
 
@@ -17,8 +17,8 @@ exports.alerts = (req, res, next) => {
 
 exports.getHomepage = catchAsync(async (req, res, next) => {
 
-   res.status(200).render('homepage', {
-      title: "Journey's for a lifetime"
+   res.status(200).render('index', {
+      title: "Welcome"
    });
 });
 
@@ -26,7 +26,7 @@ exports.getHomepage = catchAsync(async (req, res, next) => {
 
 exports.getRecipe = catchAsync(async (req, res, next) => {
    // Get Recipe data from collection
-   const recipe = await Tour.findOne({ slug: req.params.slug }).populate({
+   const recipe = await Recipe.findOne({ slug: req.params.slug }).populate({
       path: 'reviews',
       fields: 'review rating user'
    });
@@ -35,8 +35,8 @@ exports.getRecipe = catchAsync(async (req, res, next) => {
       return next(new AppError('There is no recipe with that name', 404));
    }
 
-   res.status(200).render('tour', {
-      title: `${tour.name}`,
+   res.status(200).render('recipe', {
+      title: `${recipe.name}`,
       recipe
    });
 });

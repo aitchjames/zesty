@@ -60,9 +60,23 @@ const recipeSchema = new mongoose.Schema(
             default: Date.now(),
             select: false
         }
+    },
+    {
+        toJSON: { virtuals: true },
+        toObject: { virtuals: true }
     }
 )
 
+recipeSchema.index({ slug: 1 })
+
+// Virtual Populate
+recipeSchema.virtual('reviews', {
+    ref: 'Review',
+    foreignField: 'recipe',
+    localField: '_id'
+});
+
+// Slugify Url
 recipeSchema.pre('save', function(next) {
     this.slug = slugify(this.name, { lower: true });
     next();
