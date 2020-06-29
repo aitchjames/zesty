@@ -295,14 +295,14 @@
       cursor: pointer;
       display: flex;
       align-items: center; }
-      .nav-menu__item a {
+      .nav-menu__item > a {
         text-decoration: none;
         color: var(--color-grey-7);
         display: flex;
         align-items: center; }
-        .nav-menu__item a.button {
+        .nav-menu__item > a.button {
           color: var(--color-light); }
-        .nav-menu__item a svg {
+        .nav-menu__item > a svg {
           margin-left: 0.5rem;
           height: 1.5rem;
           width: 1.5rem;
@@ -389,7 +389,8 @@
       padding: 2rem 3rem;
       background-color: var(--color-light);
       border-top: 1px solid var(--color-grey-3);
-      box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06); }
+      box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06); 
+      background-image: linear-gradient(to left, rgba(255,255,255,0.1), rgba(255, 255, 255, 0.7)), url('/images/megamenu-bg.jpg');  }
       .nav-menu__panel-grid {
         display: grid;
         gap: 4.5rem;
@@ -399,22 +400,27 @@
           .nav-menu__panel-grid {
             grid-template-columns: repeat(auto-fill, minmax(13.5rem, 1fr));
             gap: 3rem; } }
-        .nav-menu__panel-grid-item img {
-          width: 100%;
-          border-radius: 1rem;
-          filter: brightness(80%); }
-        .nav-menu__panel-grid-item h4 {
-          margin: 0.75rem 0 0.75rem 0;
-          padding: 0;
-          font-weight: 700;
-          color: var(--color-grey-7); }
-        .nav-menu__panel-grid-item p {
-          margin: 0;
-          padding: 0;
-          line-height: 1.2;
-          font-size: 1.3rem;
-          font-weight: 400;
-          color: var(--color-grey-6); }
+        .nav-menu__panel-grid-item {
+          display: flex;
+          flex-direction: column;
+          align-items: start;
+          text-decoration: none; }
+          .nav-menu__panel-grid-item img {
+            width: 100%;
+            border-radius: 1rem;
+            filter: brightness(80%); }
+          .nav-menu__panel-grid-item h4 {
+            margin: 0.75rem 0 0.75rem 0;
+            padding: 0;
+            font-weight: 700;
+            color: var(--color-grey-7); }
+          .nav-menu__panel-grid-item p {
+            margin: 0;
+            padding: 0;
+            line-height: 1.2;
+            font-size: 1.3rem;
+            font-weight: 400;
+            color: var(--color-grey-6); }
   
   .nav-mobile-button {
     display: none;
