@@ -5,11 +5,8 @@
     "main": "index.js",
     "scripts": {
         "start": "cross-env NODE_ENV=production node server.js",
-        "watch": "nodemon ./server.js --ignore public/",
-        "dev": "concurrently 'npm run watch' 'npm run assets' --names '💻,📦' --prefix name",
-        "assets": "webpack -w --display-max-modules 0",
-        "watch:sass": "node-sass ./public/sass/main.scss ./public/css/style.css -w",
-        "build:sass": "parcel build ./public/sass/main.scss --public-url ./public/css --out-file style.css",
+        "dev": "nodemon ./server.js --ignore public/",
+        "sass:watch": "node-sass ./public/sass/main.scss ./public/css/style.css -w",
         "watch:js": "parcel watch ./public/js/index.js --public-url ./public/js --out-file bundle.js",
         "build:js": "parcel build ./public/js/index.js --public-url ./public/js --out-file bundle.js"
     },

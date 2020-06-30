@@ -18,7 +18,7 @@ exports.alerts = (req, res, next) => {
 exports.getHomepage = catchAsync(async (req, res, next) => {
 
    res.status(200).render('index', {
-      title: "Welcome"
+      title: "Meals You Can Make Tonight"
    });
 });
 
