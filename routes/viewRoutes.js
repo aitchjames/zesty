@@ -22,7 +22,7 @@ router.get('/', authController.isLoggedIn, viewsController.getHomepage);
 // router.get('/recipe/:slug', authController.isLoggedIn, viewsController.getRecipe);
 
 // // Login & Sign Up View Routes
-// router.get('/login', authController.isLoggedIn, viewsController.getLoginForm);
+router.get('/login', authController.isLoggedIn, viewsController.getLoginForm);
 // router.get('/signup', authController.isLoggedIn, viewsController.getSignupForm);
 
 // // Account View Routes

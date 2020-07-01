@@ -41,9 +41,7 @@ body {
   overflow-x: hidden;
   scroll-behavior: smooth;
   display: flex;
-  flex-direction: column;
-  min-height: 100vh;
-  padding-top: 5.5rem; }
+  flex-direction: column; }
   body.scroll .nav-wrapper {
     position: fixed; }
 
@@ -53,6 +51,7 @@ h1, h2, h3, h4, h5 {
   line-height: 1.15; }
 
 .main-wrapper {
+  margin-top: 6rem;
   flex: 1 0 auto; }
 
 .grid-container {
@@ -136,25 +135,30 @@ h1, h2, h3, h4, h5 {
     background-color: transparent; }
 
 .button {
+  border: none;
   text-decoration: none;
-  padding: 0.8rem 1.6rem;
+  padding: 0.8rem 2rem;
   text-align: center;
   border-radius: 0.4rem;
   background-color: var(--color-primary);
   color: var(--color-light);
-  transition: background-color 0.3s ease; }
+  transition: background-color 0.3s ease;
+  cursor: pointer; }
   .button:hover {
     color: var(--color-light);
     background-color: var(--color-primary-dark); }
   .button-icon {
+    border: none;
     text-decoration: none;
     display: inline-flex;
+    justify-content: center;
     align-items: center;
     padding: 0.8rem 1.6rem;
     border-radius: 0.4rem;
     background-color: var(--color-primary);
     color: var(--color-light);
-    transition: background-color 0.3s ease; }
+    transition: background-color 0.3s ease;
+    cursor: pointer; }
     .button-icon span {
       margin-left: 0.75rem; }
     .button-icon:hover {
@@ -166,6 +170,109 @@ h1, h2, h3, h4, h5 {
     .button-icon__not-favourited {
       background-color: var(--color-grey-3);
       color: var(--color-grey-8); }
+
+.auth-form-container {
+  grid-column: col-start 5 / full-end;
+  background-color: var(--color-grey-1);
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  height: 100vh; }
+  @media only screen and (max-width: 1024px) {
+    .auth-form-container {
+      grid-column: col-start 4 / full-end; } }
+  @media only screen and (max-width: 768px) {
+    .auth-form-container {
+      grid-column: full-start / full-end;
+      padding: 0 2rem; } }
+  @media only screen and (max-width: 640px) {
+    .auth-form-container {
+      height: -webkit-fill-available !important;
+      min-height: -webkit-fill-available !important; } }
+  .auth-form-container main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-grow: 1; }
+
+.auth-form-nav {
+  padding: 2rem 3rem 0 3rem; }
+  @media only screen and (max-width: 768px) {
+    .auth-form-nav {
+      padding: 2rem 0 0 0; } }
+  .auth-form-nav p {
+    text-align: right;
+    font-size: 1.4rem; }
+    .auth-form-nav p a {
+      text-decoration: none;
+      color: var(--color-primary); }
+
+.auth-form-content {
+  width: 100%;
+  max-width: 450px; }
+
+.auth-form__heading {
+  font-weight: 700;
+  margin-top: 1.5rem;
+  margin-bottom: 2rem; }
+
+.auth-form__group {
+  margin-bottom: 1.5rem; }
+  .auth-form__group .button-icon {
+    margin-top: 1.5rem;
+    font-size: 1.6rem;
+    padding: 1rem 2rem;
+    width: 100%;
+    max-width: 20rem; }
+    @media only screen and (max-width: 768px) {
+      .auth-form__group .button-icon {
+        max-width: 100%; } }
+
+.auth-form__label {
+  display: flex;
+  font-size: 1.6rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  color: var(--color-grey-8);
+  width: 100%; }
+  .auth-form__label a {
+    text-decoration: none;
+    color: var(--color-primary);
+    font-size: 1.4rem;
+    margin-left: auto;
+    font-weight: 400; }
+
+.auth-form__input {
+  width: 100%;
+  height: 4.2rem;
+  padding: 1rem 1.6rem;
+  outline: none;
+  border-radius: 0.8rem;
+  background-color: var(--color-grey-3);
+  border: 1px solid transparent;
+  -webkit-appearance: none;
+  appearance: none;
+  font-size: 1.4rem; }
+  .auth-form__input::placeholder {
+    color: var(--color-grey-6); }
+  .auth-form__input:focus, .auth-form__input:hover {
+    background-color: transparent;
+    border: 1px solid rgba(246, 81, 55, 0.5);
+    -webkit-box-shadow: 0 0 0 0.4rem rgba(246, 81, 55, 0.1);
+    box-shadow: 0 0 0 0.4rem rgba(246, 81, 55, 0.1); }
+
+.auth-banner {
+  grid-column: full-start / col-end 4;
+  background-image: url("./../images/auth-banner.jpg");
+  background-size: cover;
+  background-position: left;
+  height: 100vh; }
+  @media only screen and (max-width: 1024px) {
+    .auth-banner {
+      grid-column: full-start / col-end 3; } }
+  @media only screen and (max-width: 768px) {
+    .auth-banner {
+      display: none; } }
 
 .footer {
   background-color: var(--color-grey-1);
@@ -291,8 +398,8 @@ h1, h2, h3, h4, h5 {
 
 .hero-home__aside {
   grid-column: col-start 7 / full-end;
-  background-color: #14213D;
-  padding: 3rem 2rem 2rem 2rem;
+  background-color: var(--color-grey-4);
+  padding: 5rem 4rem 4rem 4rem;
   height: 80vh;
   color: var(--color-light); }
   @media only screen and (max-width: 1024px) {
@@ -332,14 +439,27 @@ h1, h2, h3, h4, h5 {
         justify-self: center;
         align-self: center;
         filter: brightness(40%); }
-      .hero-home__aside-list--item span {
+      .hero-home__aside-list--item div {
         grid-row: 1 / -1;
         grid-column: 1 / -1;
         z-index: 2;
         justify-self: center;
         align-self: center;
         font-size: 2rem;
-        font-weight: 700; }
+        font-weight: 700;
+        display: block;
+        text-align: center; }
+        .hero-home__aside-list--item div span {
+          display: block;
+          margin-bottom: 1rem; }
+        .hero-home__aside-list--item div a {
+          color: var(--color-light);
+          border: 2px solid var(--color-light);
+          padding: 0.75rem 1.5rem;
+          border-radius: 10rem;
+          text-decoration: none;
+          font-size: 1.4rem;
+          background-color: rgba(255, 255, 255, 0.2); }
       @media only screen and (max-width: 1024px) {
         .hero-home__aside-list--item {
           grid-column: span 2;

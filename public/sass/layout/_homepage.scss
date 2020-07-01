@@ -41,8 +41,8 @@
 
     &__aside {
         grid-column: col-start 7 / full-end;
-        background-color: #14213D;
-        padding: 3rem 2rem 2rem 2rem;
+        background-color: var(--color-grey-4);
+        padding: 5rem 4rem 4rem 4rem;
         height: 80vh;
         color: var(--color-light);
 
@@ -90,7 +90,7 @@
                     filter: brightness(40%);
                 }
 
-                & span {
+                & div {
                     grid-row: 1 / -1;
                     grid-column: 1 / -1;
                     z-index: 2;                    
@@ -98,6 +98,23 @@
                     align-self: center;
                     font-size: 2rem;
                     font-weight: 700;
+                    display: block;
+                    text-align: center;
+
+                    & span {
+                        display: block;
+                        margin-bottom: 1rem;
+                    }
+
+                    & a {
+                        color: var(--color-light);
+                        border: 2px solid var(--color-light);
+                        padding: 0.75rem 1.5rem;
+                        border-radius: 10rem;
+                        text-decoration: none;
+                        font-size: 1.4rem;
+                        background-color: rgba(255, 255, 255, 0.2);
+                    }
                 }
 
                 @media only screen and (max-width: $breakpoint-lg) {
