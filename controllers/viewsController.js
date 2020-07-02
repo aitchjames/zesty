@@ -15,12 +15,19 @@ exports.alerts = (req, res, next) => {
 
 // Various Page View Routes
 
-exports.getHomepage = catchAsync(async (req, res, next) => {
+exports.getHomePage = catchAsync(async (req, res, next) => {
 
    res.status(200).render('index', {
       title: "Meals You Can Make Tonight"
    });
 });
+
+exports.getAboutPage = catchAsync(async (req, res, next) => {
+
+    res.status(200).render('about', {
+       title: "About"
+    });
+ });
 
 // Recipe View Routes
 
@@ -56,6 +63,13 @@ exports.getSignupForm = (req, res) => {
       title: 'Create your account'
    });
 };
+
+exports.getForgotPassword = (req, res) => {
+
+    res.status(200).render('forgotpassword', {
+       title: 'Forgot Password?'
+    });
+ };
 
 // Account View Routes
 

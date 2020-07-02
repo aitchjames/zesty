@@ -7,8 +7,8 @@ const router = express.Router();
 router.use(viewsController.alerts);
 
 // Various Page View Routes
-router.get('/', authController.isLoggedIn, viewsController.getHomepage);
-// router.get('/about', authController.isLoggedIn, viewsController.getAboutPage);
+router.get('/', authController.isLoggedIn, viewsController.getHomePage);
+router.get('/about', authController.isLoggedIn, viewsController.getAboutPage);
 // router.get('/blog', authController.isLoggedIn, viewsController.getBlog);
 // router.get('/newsletter', authController.isLoggedIn, viewsController.getNewletterPage);
 // router.get('/careers', authController.isLoggedIn, viewsController.getCareersPage);
@@ -23,7 +23,8 @@ router.get('/', authController.isLoggedIn, viewsController.getHomepage);
 
 // // Login & Sign Up View Routes
 router.get('/login', authController.isLoggedIn, viewsController.getLoginForm);
-// router.get('/signup', authController.isLoggedIn, viewsController.getSignupForm);
+router.get('/signup', authController.isLoggedIn, viewsController.getSignupForm);
+router.get('/password/new', authController.isLoggedIn, viewsController.getForgotPassword);
 
 // // Account View Routes
 // router.get('/account', authController.protect, viewsController.getAccount);

@@ -41,7 +41,11 @@ body {
   overflow-x: hidden;
   scroll-behavior: smooth;
   display: flex;
-  flex-direction: column; }
+  flex-direction: column;
+  min-height: 100vh; }
+  @media only screen and (max-width: 768px) {
+    body {
+      min-height: auto; } }
   body.scroll .nav-wrapper {
     position: fixed; }
 
@@ -89,6 +93,18 @@ h1, h2, h3, h4, h5 {
 ::selection {
   color: var(--color-light);
   background: var(--color-primary); }
+
+.generic-half__left {
+  grid-column: col-start 1 / col-end 4; }
+  @media only screen and (max-width: 768px) {
+    .generic-half__left {
+      grid-column: col-start 1 / col-end 8; } }
+
+.generic-half__right {
+  grid-column: col-start 5 / col-end 8; }
+  @media only screen and (max-width: 768px) {
+    .generic-half__right {
+      grid-column: col-start 1 / col-end 8; } }
 
 .search {
   display: flex;
@@ -171,6 +187,22 @@ h1, h2, h3, h4, h5 {
       background-color: var(--color-grey-3);
       color: var(--color-grey-8); }
 
+.about-hero__content {
+  grid-column: col-start 1 / col-end 4; }
+  .about-hero__content--heading {
+    font-weight: 700; }
+  .about-hero__content--subheading {
+    max-width: 40rem;
+    margin-bottom: 1.5rem; }
+  .about-hero__content .button {
+    font-size: 1.4rem; }
+
+.about-hero__images {
+  grid-column: col-start 5 / col-end 8;
+  display: grid;
+  grid-template-rows: repeat(8, 1fr);
+  grid-template-columns: repeat(8, 1fr); }
+
 .auth-form-container {
   grid-column: col-start 5 / full-end;
   background-color: var(--color-grey-1);
@@ -211,21 +243,48 @@ h1, h2, h3, h4, h5 {
   width: 100%;
   max-width: 450px; }
 
+.auth-form__goback {
+  display: flex;
+  align-items: center;
+  color: var(--color-primary);
+  text-decoration: none; }
+  .auth-form__goback svg {
+    stroke: currentColor;
+    stroke-width: 1; }
+  .auth-form__goback span {
+    margin-left: 1rem; }
+
 .auth-form__heading {
   font-weight: 700;
   margin-top: 1.5rem;
   margin-bottom: 2rem; }
 
+.auth-form__information {
+  margin-bottom: 2rem;
+  font-size: 1.4rem; }
+
+.auth-form__grouped {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: space-between; }
+  .auth-form__grouped .auth-form__group {
+    margin-left: 1.5rem;
+    flex-grow: 1; }
+    .auth-form__grouped .auth-form__group:first-child {
+      margin-left: 0; }
+
 .auth-form__group {
   margin-bottom: 1.5rem; }
-  .auth-form__group .button-icon {
+  .auth-form__group .button {
     margin-top: 1.5rem;
     font-size: 1.6rem;
     padding: 1rem 2rem;
-    width: 100%;
-    max-width: 20rem; }
+    max-width: 30rem; }
     @media only screen and (max-width: 768px) {
-      .auth-form__group .button-icon {
+      .auth-form__group .button {
+        width: 100%;
         max-width: 100%; } }
 
 .auth-form__label {
@@ -254,8 +313,8 @@ h1, h2, h3, h4, h5 {
   appearance: none;
   font-size: 1.4rem; }
   .auth-form__input::placeholder {
-    color: var(--color-grey-6); }
-  .auth-form__input:focus, .auth-form__input:hover {
+    color: var(--color-grey-5); }
+  .auth-form__input:focus {
     background-color: transparent;
     border: 1px solid rgba(246, 81, 55, 0.5);
     -webkit-box-shadow: 0 0 0 0.4rem rgba(246, 81, 55, 0.1);
@@ -380,7 +439,7 @@ h1, h2, h3, h4, h5 {
     .hero-home__main {
       padding: 2rem;
       grid-column: full-start / full-end;
-      height: 60vh; } }
+      height: 70vh; } }
   .hero-home__main--heading {
     color: var(--color-light);
     font-size: 4.8rem;
@@ -399,23 +458,18 @@ h1, h2, h3, h4, h5 {
 .hero-home__aside {
   grid-column: col-start 7 / full-end;
   background-color: var(--color-grey-4);
-  padding: 5rem 4rem 4rem 4rem;
   height: 80vh;
   color: var(--color-light); }
   @media only screen and (max-width: 1024px) {
     .hero-home__aside {
       grid-column: full-start / full-end;
       height: auto; } }
-  @media only screen and (max-width: 768px) {
-    .hero-home__aside {
-      padding: 2rem; } }
   .hero-home__aside-list {
     display: grid;
     height: 100%;
     align-content: center;
     grid-template-columns: repeat(6, 1fr);
-    grid-template-rows: repeat(6, 1fr);
-    gap: 2rem; }
+    grid-template-rows: repeat(6, 1fr); }
     @media only screen and (max-width: 1024px) {
       .hero-home__aside-list {
         grid-template-rows: repeat(2, 1fr); } }
@@ -423,7 +477,6 @@ h1, h2, h3, h4, h5 {
       background-color: blue;
       grid-column: 1 / -1;
       grid-row: span 2;
-      border-radius: 0.4rem;
       display: grid;
       grid-template-columns: repeat(6, 1fr);
       grid-template-rows: repeat(6, 1fr);

@@ -22,7 +22,12 @@ body {
     scroll-behavior: smooth;
     display: flex;
     flex-direction: column;
-    // min-height: 100vh;    
+    min-height: 100vh; 
+    
+    @media only screen and (max-width: $breakpoint-md) {
+        min-height: auto;
+    }
+    
 
     &.scroll .nav-wrapper {
         position: fixed;        
@@ -141,4 +146,22 @@ h1, h2, h3, h4, h5 {
 ::selection {
     color: var(--color-light);
     background: var(--color-primary);
+}
+
+.generic-half {
+    &__left {
+        grid-column: col-start 1 / col-end 4;
+
+        @media only screen and (max-width: $breakpoint-md) {
+            grid-column: col-start 1 / col-end 8;
+        }
+    }
+
+    &__right {
+        grid-column: col-start 5 / col-end 8;
+
+        @media only screen and (max-width: $breakpoint-md) {
+            grid-column: col-start 1 / col-end 8;
+        }
+    }
 }

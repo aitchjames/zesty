@@ -19,24 +19,34 @@
         <div class="auth-banner"></div>
         <div class="auth-form-container">
             <nav class="auth-form-nav">
-                <p>Not a member? <a href="/signup">Sign up now</a></p>
+                <p>Already a member? <a href="/login">Log in</a></p>
             </nav>
             <main>
                 <div class="auth-form-content">
                     <a href="/"><img src="/images/zesty-logo-icon.svg" alt=""></a>
-                    <h2 class="auth-form__heading">Log into Zesty Recipes</h2>
+                    <h2 class="auth-form__heading">Sign up to Zesty Recipes</h2>
                     <form class="auth-form" autocomplete="off">
-                        <div class="auth-form__group">
-                            <label class="auth-form__label" for="email">Email address</label>
-                            <input class="auth-form__input" id="email" type="email" placeholder="you@example.com" required="required">
+                        <div class="auth-form__grouped">
+                            <div class="auth-form__group">
+                                <label class="auth-form__label" for="name">Name</label>
+                                <input class="auth-form__input" id="name" type="text" placeholder="" required="required">
+                            </div>
+                            <div class="auth-form__group">
+                                <label class="auth-form__label" for="username">Username</label>
+                                <input class="auth-form__input" id="username" type="text" placeholder="" required="required">
+                            </div>
                         </div>
                         <div class="auth-form__group">
-                            <label class="auth-form__label" for="password">Password <a href="/password/new">Forgot password?</a></label>
-                            <input class="auth-form__input" id="password" type="password" placeholder="••••••••" required="required" minlength="8">
+                            <label class="auth-form__label" for="email">Email address</label>
+                            <input class="auth-form__input" id="email" type="email" placeholder="" required="required">
+                        </div>
+                        <div class="auth-form__group">
+                            <label class="auth-form__label" for="password">Password</label>
+                            <input class="auth-form__input" id="password" type="password" placeholder="8+ characters" required="required" minlength="8">
                         </div>
                         <div class="auth-form__group">
                             <button class="button">
-                                <span>Log in</span>
+                                <span>Create account</span>
                             </button>
                         </div>
                     </form>
