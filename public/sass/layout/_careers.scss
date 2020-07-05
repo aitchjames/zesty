@@ -1,0 +1,50 @@
+.careers-content {
+    grid-column: col-start 1 / col-end 6;
+    margin: 5rem 0;
+
+    @media only screen and (max-width: $breakpoint-md) {
+        grid-column: col-start 1 / col-end 8;
+        margin: 3rem 0 5rem 0;
+    }
+
+    & hr {
+        max-width: 60rem;
+        margin: 10rem 0;
+
+        @media only screen and (max-width: $breakpoint-md) {
+            margin: 5rem 0;
+        }
+    }
+
+    &--heading {
+        font-weight: 700;
+        margin-bottom: 1rem;
+    }
+
+    &--paragraph {
+        font-size: 1.8rem;
+        margin-bottom: 2rem;
+
+        @media only screen and (max-width: $breakpoint-md) {
+            padding: 0;
+        }
+
+        &.mb {
+            margin-bottom: 10rem;
+
+            @media only screen and (max-width: $breakpoint-md) {
+                margin-bottom: 5rem;
+            }
+        }
+
+        &.centered {
+            text-align: center;
+        }
+
+        &.muted {
+            color: var(--color-grey-6);
+            font-size: 1.4rem;
+            max-width: 55rem;            
+        }
+    }
+}

@@ -153,7 +153,7 @@ h1, h2, h3, h4, h5 {
 .button {
   border: none;
   text-decoration: none;
-  padding: 0.8rem 2rem;
+  padding: 1rem 2rem;
   text-align: center;
   border-radius: 0.4rem;
   background-color: var(--color-primary);
@@ -188,20 +188,70 @@ h1, h2, h3, h4, h5 {
       color: var(--color-grey-8); }
 
 .about-hero__content {
-  grid-column: col-start 1 / col-end 4; }
+  grid-column: col-start 1 / col-end 4;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 80vh;
+  max-height: 70rem; }
+  @media only screen and (max-width: 768px) {
+    .about-hero__content {
+      grid-column: col-start 1 / col-end 8;
+      padding: 3rem 0;
+      text-align: center;
+      align-items: center;
+      height: 100%; } }
   .about-hero__content--heading {
     font-weight: 700; }
   .about-hero__content--subheading {
     max-width: 40rem;
-    margin-bottom: 1.5rem; }
+    margin-bottom: 2rem; }
   .about-hero__content .button {
-    font-size: 1.4rem; }
+    font-size: 1.6rem;
+    align-self: flex-start; }
+    @media only screen and (max-width: 768px) {
+      .about-hero__content .button {
+        align-self: center; } }
 
 .about-hero__images {
   grid-column: col-start 5 / col-end 8;
-  display: grid;
-  grid-template-rows: repeat(8, 1fr);
-  grid-template-columns: repeat(8, 1fr); }
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 5rem 0;
+  height: auto; }
+  .about-hero__images img {
+    width: 100%;
+    object-fit: contain;
+    height: auto; }
+  @media only screen and (max-width: 768px) {
+    .about-hero__images {
+      grid-column: col-start 1 / col-end 8;
+      padding: 0;
+      margin: 0; } }
+
+.about-content {
+  margin: 5rem 0;
+  grid-column: col-start 2 / col-end 7; }
+  @media only screen and (max-width: 768px) {
+    .about-content {
+      grid-column: col-start 1 / col-end 8; } }
+  .about-content--heading {
+    font-weight: 700;
+    margin-bottom: 3rem;
+    text-align: center; }
+    @media only screen and (max-width: 768px) {
+      .about-content--heading {
+        font-size: 2.8rem;
+        text-align: center; } }
+  .about-content--paragraph {
+    font-size: 1.8rem;
+    margin-bottom: 2rem;
+    padding: 0 2rem; }
+    @media only screen and (max-width: 768px) {
+      .about-content--paragraph {
+        padding: 0 0.5rem;
+        font-size: 1.6rem; } }
 
 .auth-form-container {
   grid-column: col-start 5 / full-end;
@@ -333,6 +383,44 @@ h1, h2, h3, h4, h5 {
     .auth-banner {
       display: none; } }
 
+.careers-content {
+  grid-column: col-start 1 / col-end 6;
+  margin: 5rem 0; }
+  @media only screen and (max-width: 768px) {
+    .careers-content {
+      grid-column: col-start 1 / col-end 8;
+      margin: 3rem 0 5rem 0; } }
+  .careers-content hr {
+    max-width: 60rem;
+    margin: 10rem 0; }
+    @media only screen and (max-width: 768px) {
+      .careers-content hr {
+        margin: 5rem 0; } }
+  .careers-content--heading {
+    font-weight: 700;
+    margin-bottom: 1rem; }
+  .careers-content--paragraph {
+    font-size: 1.8rem;
+    margin-bottom: 2rem; }
+    @media only screen and (max-width: 768px) {
+      .careers-content--paragraph {
+        padding: 0; } }
+    .careers-content--paragraph.mb {
+      margin-bottom: 10rem; }
+      @media only screen and (max-width: 768px) {
+        .careers-content--paragraph.mb {
+          margin-bottom: 5rem; } }
+    .careers-content--paragraph.centered {
+      text-align: center; }
+    .careers-content--paragraph.muted {
+      color: var(--color-grey-6);
+      font-size: 1.4rem;
+      max-width: 55rem; }
+
+.contact-content {
+  grid-column: col-start 1 / col-end 6;
+  margin: 5rem 0; }
+
 .footer {
   background-color: var(--color-grey-1);
   font-size: 1.4rem;
@@ -351,8 +439,8 @@ h1, h2, h3, h4, h5 {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    max-width: 22rem;
-    margin-right: 12rem; }
+    max-width: 25rem;
+    margin-right: 8rem; }
     @media only screen and (max-width: 1280px) {
       .footer-company-mission {
         margin-right: 8rem; } }
@@ -567,7 +655,8 @@ h1, h2, h3, h4, h5 {
       display: flex;
       align-items: center; }
       .nav-menu__item > a.button {
-        color: var(--color-light); }
+        color: var(--color-light);
+        padding: 0.8rem 2rem; }
       .nav-menu__item > a svg {
         margin-left: 0.5rem;
         height: 1.5rem;

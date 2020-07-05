@@ -56,7 +56,9 @@ reviewsButton = document.querySelector(".recipe-cooking-reviews__heading");
 reviewsContent = document.querySelector(".recipe-cooking-reviews__content");
 
 // Reviews Delegation
-reviewsButton.addEventListener("click", () => toggleReviews());
+if (reviewsButton) {
+    reviewsButton.addEventListener("click", () => toggleReviews());
+}
 
 function toggleReviews() {
     reviewsButton.classList.toggle("hidden");
@@ -69,7 +71,7 @@ const colorThief = new ColorThief();
 const mainRecipeImage = document.querySelector(".recipe-masthead__image-fg");
 const mainRecipeImageBG = document.querySelector(".recipe-masthead__image-bg")
 
-if (mainRecipeImage.complete) {
+if (mainRecipeImage) {
     let color = colorThief.getColor(mainRecipeImage);
     mainRecipeImageBG.style.backgroundColor = `rgb(${color[0]}, ${color[1]}, ${color[2]})`;
 } else {

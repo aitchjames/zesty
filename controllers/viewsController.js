@@ -29,6 +29,20 @@ exports.getAboutPage = catchAsync(async (req, res, next) => {
     });
  });
 
+ exports.getCareersPage = catchAsync(async (req, res, next) => {
+
+    res.status(200).render('careers', {
+       title: "Working at Zesty"
+    });
+ });
+
+ exports.getContactPage = catchAsync(async (req, res, next) => {
+
+    res.status(200).render('contact', {
+       title: "Contact us"
+    });
+ });
+
 // Recipe View Routes
 
 exports.getRecipe = catchAsync(async (req, res, next) => {
