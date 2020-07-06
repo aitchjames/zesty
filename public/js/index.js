@@ -1,34 +1,72 @@
-// Remove mobile menu when window resizes
-let windowResizeTimer;
-
-window.addEventListener("resize", event => {
-    clearTimeout(windowResizeTimer);
-    windowResizeTimer = setTimeout(() => {
-        if (window.innerWidth > 768) {
-            menuIconHamburger.classList.remove("nav-mobile-button-menu__is-visible");
-            menuIconClose.classList.remove("nav-mobile-button-x__is-visible");
-            menuContent.classList.remove("nav-menu__mobile__is-visible");
-            documentBody.classList.remove("scroll");
-        }
-    }, 250)
-});
+import "@babel/polyfill";
+import ColorThief from "ColorThief";
+import { login, logout, signup, forgotPassword } from "./auth";
+import { showAlert } from "./alerts";
 
 // Mobile Menu Dom Elements
-documentBody = document.getElementsByTagName("BODY")[0]; 
-menuIcon = document.querySelector(".nav-mobile-button");    
-menuIconHamburger = document.querySelector(".nav-mobile-button-menu");    
-menuIconClose = document.querySelector(".nav-mobile-button-x");    
-menuContent = document.querySelector(".nav-menu__mobile");
-menuCollapsible = document.querySelectorAll(".nav-mobile__link-collapse");
+const menuIcon = document.querySelector(".nav-mobile-button");    
+const menuIconHamburger = document.querySelector(".nav-mobile-button-menu");    
+const menuIconClose = document.querySelector(".nav-mobile-button-x");    
+const menuContent = document.querySelector(".nav-menu__mobile");
+const menuCollapsible = document.querySelectorAll(".nav-mobile__link-collapse");
+const loginForm = document.querySelector(".auth-form-login");
+const signupForm = document.querySelector(".auth-form-signup");
+const forgotPasswordForm = document.querySelector(".auth-form-forgotpassword");
+const logoutButton = document.querySelector(".button-logout");
 
 // Mobile Menu Delegation
-menuIcon.addEventListener("click", () => toggleMenu());
+if (menuIcon) {
+    menuIcon.addEventListener("click", () => {
+        toggleMenu();
+    });
+
+    // Remove mobile menu when window resizes
+    let windowResizeTimer;
+
+    window.addEventListener("resize", event => {
+        clearTimeout(windowResizeTimer);
+        windowResizeTimer = setTimeout(() => {
+            if (window.innerWidth > 768) {
+                menuIconHamburger.classList.remove("nav-mobile-button-menu__is-visible");
+                menuIconClose.classList.remove("nav-mobile-button-x__is-visible");
+                menuContent.classList.remove("nav-menu__mobile__is-visible");
+            }
+        }, 250);
+    });
+}
 
 function toggleMenu() {
     menuIconHamburger.classList.toggle("nav-mobile-button-menu__is-visible");
     menuIconClose.classList.toggle("nav-mobile-button-x__is-visible");
     menuContent.classList.toggle("nav-menu__mobile__is-visible");
-    documentBody.classList.toggle("scroll");
+}
+
+if (loginForm) {
+    loginForm.addEventListener("submit", event => {
+        event.preventDefault();
+        const email = document.getElementById("email").value;
+        const password = document.getElementById("password").value;
+        login(email, password);
+    })
+}
+
+if (signupForm) {
+    signupForm.addEventListener("submit", event => {
+       event.preventDefault();
+       const name = document.getElementById("name").value;
+       const username = document.getElementById("username").value;
+       const email = document.getElementById("email").value;
+       const password = document.getElementById("password").value;
+       signup(name, username, email, password);
+    });
+}
+
+if (forgotPasswordForm) {
+    forgotPasswordForm.addEventListener("submit", event => {
+        event.preventDefault();
+        const email = document.getElementById("email").value;
+        forgotPassword(email);
+    })
 }
 
 if (menuCollapsible) {
@@ -52,8 +90,8 @@ if (menuCollapsible) {
 }
 
 // Reviews Dom Elements
-reviewsButton = document.querySelector(".recipe-cooking-reviews__heading");
-reviewsContent = document.querySelector(".recipe-cooking-reviews__content");
+const reviewsButton = document.querySelector(".recipe-cooking-reviews__heading");
+const reviewsContent = document.querySelector(".recipe-cooking-reviews__content");
 
 // Reviews Delegation
 if (reviewsButton) {
@@ -75,3 +113,8 @@ if (mainRecipeImage) {
     let color = colorThief.getColor(mainRecipeImage);
     mainRecipeImageBG.style.backgroundColor = `rgb(${color[0]}, ${color[1]}, ${color[2]})`;
 } 
+
+if (logoutButton) logoutButton.addEventListener("click", logout);
+
+const alertMessage = document.querySelector("body").dataset.alert;
+if (alertMessage) showAlert("success", alertMessage, 20);

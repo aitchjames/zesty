@@ -1,0 +1,52 @@
+[
+    {
+        "name": "Dreamy choc-chip pancakes",
+        "description": "Breakfast food doesn’t get much better than pancakes. But it can! Add chocolate chips and peanut butter, and you’ve got something that’s worth serving up at any time of day",
+        "imageCover": "dreamy-choc-chip-pancakes.jpg",
+        "servings": 2,
+        "prepTime": 10,
+        "cookTime": 10,
+        "difficulty": "easy",
+        "ingredients": [
+            {
+                "description": "185g plain (all-purpose) flour",
+                "type": "item"
+            },
+            {
+                "description": "1 tablespoon baking powder",
+                "type": "item"
+            },
+            {
+                "description": "3 tablespoons sugar",
+                "type": "item"
+            },
+            {
+                "description": "1/4 teaspoon salt",
+                "type": "item"
+            },
+            {
+                "description": "250ml milk of your choice",
+                "type": "item"
+            },
+            {
+                "description": "1 egg, lightly beaten, or egg substitute",
+                "type": "item"
+            },
+            {
+                "description": "60g peanut butter, softened, plus extra to serve",
+                "type": "item"
+            },
+            {
+                "description": "100g chocolate chips or cacao nibs, plus extra to serve oil of your choice, for frying",
+                "type": "item"
+            }
+        ],
+        "method": [
+            "Sift the flour and baking powder into a large bowl, then stir in the sugar and salt. Add the milk and egg and whisk gently to combine. Stir in the peanut butter and fold through the chocolate chips.",
+            "Warm a little oil in a small frying pan over a medium heat and pour in 60ml (2 fl oz/ 1/4 cup) of batter. Cook until small bubbles appear on the surface and the edges start to look dry, then flip and cook the other side for about 3 minutes, until both sides are golden brown.",
+            "Layer your stack with extra peanut butter, top with chocolate chips and serve immediately."
+        ],
+        "ratingsAverage": 4.5,
+        "ratingsQuantity": 0
+    }
+]

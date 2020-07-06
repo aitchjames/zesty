@@ -38,8 +38,8 @@ const recipeSchema = new mongoose.Schema(
                 description: String,
                 type: {
                     type: String,
-                    default: 'Item',
-                    enum: ['Item', 'Heading']
+                    default: 'item',
+                    enum: ['item', 'heading']
                 }
             }
         ],

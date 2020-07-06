@@ -36,7 +36,7 @@ const createSendToken = (user, statusCode, req, res) => {
 exports.signup = catchAsync(async (req, res, next) => {
     const newUser = await User.create(req.body);
 
-    const url = `${req.protocol}://${req.get('host')}/me`;
+    const url = `${req.protocol}://${req.get('host')}/account`;
     await new Email(newUser, url).sendWelcome();
 
     createSendToken(newUser, 201, req, res);
@@ -103,14 +103,10 @@ exports.protect = catchAsync(async (req, res, next) => {
 
 // Only for rendered pages, no errors!
 exports.isLoggedIn = async (req, res, next) => {
-    if (!req.cookies.jwt) {
-        req.user = null;
-        res.locals.user = null;
-        next();
-    } else {
+    if (req.cookies.jwt) {
         try {
             // 1) verify token
-            const decoded = await promisify(jwt.verify)(req.cookies.jwt, process.env.JWT_SECRET);
+            const decoded = await promisify(jwt.verify)(req.cookies.jwt,process.env.JWT_SECRET);
 
             // 2) Check if user still exists
             const currentUser = await User.findById(decoded.id);
@@ -124,13 +120,14 @@ exports.isLoggedIn = async (req, res, next) => {
             }
 
             // THERE IS A LOGGED IN USER
-            req.user = currentUser;
             res.locals.user = currentUser;
+            res.user = currentUser;
             return next();
         } catch (err) {
             return next();
         }
     }
+    next();
 };
 
 exports.restrictTo = (...roles) => {
@@ -207,7 +204,6 @@ exports.updatePassword = catchAsync(async (req, res, next) => {
 
     // If password is correct, update password
     user.password = req.body.password;
-    user.passwordConfirm = req.body.passwordConfirm;
     await user.save();
 
     // Log user in with JWT

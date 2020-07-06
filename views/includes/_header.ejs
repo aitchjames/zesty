@@ -80,9 +80,12 @@
                             <input type="text" class="nav-search__input" placeholder="Search recipes" autocomplete="off">
                         </form>
                     </li>
-                    <% if (!user) { %>
+                    <% if (!locals.user) { %>
                     <li class="nav-menu__item"><a href="/login">Log in</a></li>
                     <li class="nav-menu__item"><a href="/signup" class="button">Sign up</a></li>
+                    <% } %>
+                    <% if (locals.user) { %>
+                    <li class="nav-menu__item"><button class="button-logout">Log out</button></li>
                     <% } %>
                 </ul>
             </nav>
@@ -110,7 +113,7 @@
                     </div>
                 </div>
             </div>
-            <% if (user) { %>
+            <% if (locals.user) { %>
             <div class="nav-menu__mobile-profile">
                 <a class="nav-menu__mobile-user" href="">
                     <img src="/images/user-avatar.jpg" width="40" height="40" alt="">
@@ -125,7 +128,7 @@
                 </div>
             </div>
             <% } %>
-            <% if (!user) { %>
+            <% if (!locals.user) { %>
             <div class="nav-menu__mobile-signup">
                 <a class="button" href="/signup">Sign up</a>
                 <span>Already a member? <a href="/login">Log in</a></span>

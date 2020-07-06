@@ -7,14 +7,16 @@
         "start": "cross-env NODE_ENV=production node server.js",
         "dev": "nodemon ./server.js --ignore public/",
         "sass:watch": "node-sass ./public/sass/main.scss ./public/css/style.css -w",
-        "watch:js": "parcel watch ./public/js/index.js --public-url ./public/js --out-file bundle.js",
+        "watch:js": "parcel watch ./public/js/index.js --out-dir ./public/js --out-file bundle.js --no-source-maps",
         "build:js": "parcel build ./public/js/index.js --public-url ./public/js --out-file bundle.js"
     },
     "author": "",
     "license": "ISC",
     "dependencies": {
+        "@babel/polyfill": "^7.10.4",
         "axios": "^0.19.2",
         "bcryptjs": "^2.4.3",
+        "colorthief": "^2.3.1",
         "compression": "^1.7.4",
         "cookie-parser": "^1.4.5",
         "cors": "^2.8.5",

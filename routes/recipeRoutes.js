@@ -5,7 +5,7 @@ const authController = require('./../controllers/authController');
 const router = express.Router();
 
 router.route('/')
-    .get(recipeController.getAllRecipes)
+    .get(recipeController.getRecipes)
     .post(authController.protect, authController.restrictTo('chef', 'editor', 'admin'), recipeController.createRecipe);
 
 router.route('/:id')

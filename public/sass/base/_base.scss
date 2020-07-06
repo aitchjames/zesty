@@ -39,50 +39,6 @@ h1, h2, h3, h4, h5 {
     line-height: 1.15;
   }
 
-// h1 {
-//     font-size: 4.8rem;
-
-//     @media only screen and (max-width: $breakpoint-md) {
-//         font-size: calc(4.8rem * 0.75);
-//     }
-
-//     @media only screen and (max-width: $breakpoint-sm) {
-//         font-size: calc(4.8rem * 0.65);
-//     }
-// }
-  
-// h2 {
-//     font-size: 3.9rem;
-
-//     @media only screen and (max-width: $breakpoint-md) {
-//         font-size: calc(3.9rem * 0.75);
-//     }
-
-//     @media only screen and (max-width: $breakpoint-sm) {
-//         font-size: calc(3.9rem * 0.65);
-//     }
-// }
-  
-// h3 {
-//     font-size: 3.1rem;
-
-//     @media only screen and (max-width: $breakpoint-md) {
-//         font-size: calc(3.1rem * 0.75);
-//     }
-
-//     @media only screen and (max-width: $breakpoint-sm) {
-//         font-size: calc(3.1rem * 0.65);
-//     }
-// }
-  
-// h4 {
-//     font-size: 2.5rem;
-// }
-  
-// h5 {
-//     font-size: 2rem;
-// }
-
 .main-wrapper {
     margin-top: 6rem;
     flex: 1 0 auto;
@@ -90,16 +46,10 @@ h1, h2, h3, h4, h5 {
 
 .grid-container {
     display: grid;
-    //grid-template-rows: 100vh min-content 40vw repeat(3, min-content);
     grid-template-columns: [full-start] minmax(6rem, 1fr) [center-start] repeat(8, [col-start] minmax(min-content, 16rem) [col-end]) [center-end] minmax(6rem, 1fr) [full-end];
 
     @media only screen and (max-width: $breakpoint-lg) {
-        //grid-template-rows: 6rem 100vh min-content 40vw repeat(3, min-content);
         grid-template-columns: [full-start] minmax(2rem, 1fr) [center-start] repeat(8, [col-start] minmax(min-content, 16rem) [col-end]) [center-end] minmax(2rem, 1fr) [full-end];
-    }
-
-    @media only screen and (max-width: $breakpoint-md) {
-        //grid-template-rows: 6rem calc(100vh - 6rem);
     }
 }
 
@@ -112,10 +62,6 @@ h1, h2, h3, h4, h5 {
         grid-template-rows: 90vh min-content;
         grid-template-columns: [full-start] minmax(3rem, 1fr) [center-start] repeat(8, [col-start] minmax(min-content, 14rem) [col-end]) [center-end] minmax(3rem, 1fr) [full-end];
     }
-
-    @media only screen and (max-width: $breakpoint-md) {
-        //grid-template-rows: 6rem calc(100vh - 6rem);
-    }
 }
 
 .content-grid {
@@ -124,10 +70,6 @@ h1, h2, h3, h4, h5 {
 
     @media only screen and (max-width: $breakpoint-lg) {
         grid-template-columns: [center-start] repeat(8, [col-start] minmax(min-content, 16rem) [col-end]) [center-end];
-    }
-
-    @media only screen and (max-width: $breakpoint-md) {
-        //grid-template-rows: 6rem calc(100vh - 6rem);
     }
 }
 
@@ -191,3 +133,27 @@ h1, h2, h3, h4, h5 {
     grid-column: col-start 1 / col-end 8;
     margin: 5rem 0;
 }
+
+.alert {
+    position: fixed;
+    top: 0;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+    transform: translateX(-50%);
+    z-index: 9999;
+    color: #fff;
+    font-size: 1.8rem;
+    font-weight: 400;
+    text-align: center;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    padding: 1.6rem 15rem;
+    -webkit-box-shadow: 0 2rem 4rem rgba(0, 0, 0, 0.25);
+    box-shadow: 0 2rem 4rem rgba(0, 0, 0, 0.25);
+ }
+ .alert--success {
+    background-color: #20bf6b;
+ }
+ .alert--error {
+    background-color: #eb4d4b;
+ }
