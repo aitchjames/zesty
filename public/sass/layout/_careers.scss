@@ -1,6 +1,6 @@
 .careers-content {
-    grid-column: col-start 1 / col-end 6;
-    margin: 5rem 0;
+    grid-column: col-start 1 / col-end 5;
+    margin: 5rem 2rem 5rem 0;
 
     @media only screen and (max-width: $breakpoint-md) {
         grid-column: col-start 1 / col-end 8;
@@ -46,5 +46,17 @@
             font-size: 1.4rem;
             max-width: 55rem;            
         }
+    }
+}
+
+.careers-aside {
+    grid-column: col-start 6 / col-end 8;
+    background-image: url("./../images/banner-careers.jpg");
+    background-size: cover;
+    max-height: 70rem;
+    margin: 3rem 0;
+
+    @media only screen and (max-width: $breakpoint-md) {
+        display: none;
     }
 }

@@ -28,6 +28,7 @@
   box-sizing: inherit; }
 
 html {
+  scroll-behavior: smooth;
   box-sizing: border-box;
   font-size: 62.5%; }
 
@@ -39,7 +40,6 @@ body {
   font-size: 1.6rem;
   min-width: 320px;
   overflow-x: hidden;
-  scroll-behavior: smooth;
   display: flex;
   flex-direction: column;
   min-height: 100vh; }
@@ -105,6 +105,27 @@ h1, h2, h3, h4, h5 {
   @media only screen and (max-width: 768px) {
     .generic-half__right {
       grid-column: col-start 1 / col-end 8; } }
+
+.content-heading {
+  font-weight: 700;
+  margin-bottom: 1rem; }
+  .content-heading:target::before {
+    content: "";
+    display: block;
+    height: 8rem;
+    margin: -8rem 0 0; }
+
+.content-paragraph {
+  font-size: 1.6rem;
+  margin-bottom: 2rem; }
+
+.content-link {
+  color: var(--color-primary);
+  text-decoration: none; }
+
+.tc-content {
+  grid-column: col-start 1 / col-end 8;
+  margin: 5rem 0; }
 
 .search {
   display: flex;
@@ -384,8 +405,8 @@ h1, h2, h3, h4, h5 {
       display: none; } }
 
 .careers-content {
-  grid-column: col-start 1 / col-end 6;
-  margin: 5rem 0; }
+  grid-column: col-start 1 / col-end 5;
+  margin: 5rem 2rem 5rem 0; }
   @media only screen and (max-width: 768px) {
     .careers-content {
       grid-column: col-start 1 / col-end 8;
@@ -417,9 +438,102 @@ h1, h2, h3, h4, h5 {
       font-size: 1.4rem;
       max-width: 55rem; }
 
+.careers-aside {
+  grid-column: col-start 6 / col-end 8;
+  background-image: url("./../images/banner-careers.jpg");
+  background-size: cover;
+  max-height: 70rem;
+  margin: 3rem 0; }
+  @media only screen and (max-width: 768px) {
+    .careers-aside {
+      display: none; } }
+
 .contact-content {
-  grid-column: col-start 1 / col-end 6;
-  margin: 5rem 0; }
+  grid-column: col-start 1 / col-end 5;
+  margin: 5rem 2rem 5rem 0; }
+  @media only screen and (max-width: 768px) {
+    .contact-content {
+      grid-column: col-start 1 / col-end 8;
+      margin: 5rem 0; } }
+  .contact-content--heading {
+    font-weight: 700; }
+  .contact-content--subheading {
+    font-weight: 700;
+    margin-bottom: 2rem; }
+
+.contact-aside {
+  grid-column: col-start 6 / col-end 8;
+  background-image: url("./../images/banner-contact.jpg");
+  background-size: cover;
+  max-height: 70rem; }
+  @media only screen and (max-width: 768px) {
+    .contact-aside {
+      display: none; } }
+
+.contact-us-form {
+  max-width: 80%; }
+  @media only screen and (max-width: 768px) {
+    .contact-us-form {
+      max-width: 100%; } }
+  .contact-us-form__group {
+    margin-bottom: 1.5rem; }
+    .contact-us-form__group .button {
+      margin-top: 1.5rem;
+      font-size: 1.6rem;
+      padding: 1rem 2rem;
+      max-width: 30rem; }
+      @media only screen and (max-width: 768px) {
+        .contact-us-form__group .button {
+          width: 100%;
+          max-width: 100%; } }
+  .contact-us-form__label {
+    display: flex;
+    font-size: 1.6rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    color: var(--color-grey-8);
+    width: 100%; }
+    .contact-us-form__label a {
+      text-decoration: none;
+      color: var(--color-primary);
+      font-size: 1.4rem;
+      margin-left: auto;
+      font-weight: 400; }
+  .contact-us-form__input {
+    width: 100%;
+    height: 4.2rem;
+    padding: 1rem 1.6rem;
+    outline: none;
+    border-radius: 0.8rem;
+    background-color: var(--color-grey-3);
+    border: 1px solid transparent;
+    -webkit-appearance: none;
+    appearance: none;
+    font-size: 1.4rem; }
+    .contact-us-form__input::placeholder {
+      color: var(--color-grey-5); }
+    .contact-us-form__input:focus {
+      background-color: transparent;
+      border: 1px solid rgba(246, 81, 55, 0.5);
+      -webkit-box-shadow: 0 0 0 0.4rem rgba(246, 81, 55, 0.1);
+      box-shadow: 0 0 0 0.4rem rgba(246, 81, 55, 0.1); }
+  .contact-us-form__textarea {
+    width: 100%;
+    max-width: 63rem;
+    padding: 1rem 1.6rem;
+    outline: none;
+    border-radius: 0.8rem;
+    background-color: var(--color-grey-3);
+    border: 1px solid transparent;
+    -webkit-appearance: none;
+    appearance: none;
+    font-size: 1.6rem;
+    font-family: var(--font-body); }
+    .contact-us-form__textarea:focus {
+      background-color: transparent;
+      border: 1px solid rgba(246, 81, 55, 0.5);
+      -webkit-box-shadow: 0 0 0 0.4rem rgba(246, 81, 55, 0.1);
+      box-shadow: 0 0 0 0.4rem rgba(246, 81, 55, 0.1); }
 
 .footer {
   background-color: var(--color-grey-1);
@@ -455,7 +569,7 @@ h1, h2, h3, h4, h5 {
       width: auto; }
     .footer-company-mission__info {
       margin-top: 2rem;
-      color: var(--color-grey-6);
+      color: var(--color-grey-7);
       font-size: 1.4rem; }
   .footer-links-container {
     width: 100%;
@@ -473,15 +587,15 @@ h1, h2, h3, h4, h5 {
     display: flex;
     flex-direction: column; }
     .footer-links-list__heading {
-      font-weight: 500;
+      font-weight: 700;
       color: var(--color-grey-9); }
     .footer-links-list__item {
-      color: var(--color-grey-6);
+      color: var(--color-grey-7);
       font-weight: 400;
       text-decoration: none;
       margin-top: 1rem; }
       .footer-links-list__item:hover {
-        color: var(--color-grey-7); }
+        color: var(--color-grey-8); }
   .footer-ad-container {
     width: 30rem;
     background-color: var(--color-grey-3);
@@ -494,7 +608,7 @@ h1, h2, h3, h4, h5 {
         width: 100%;
         padding: 3rem; } }
     .footer-ad-container span {
-      color: var(--color-grey-6); }
+      color: var(--color-grey-7); }
   .footer-bottom-container {
     border-top: 1px var(--color-grey-4) solid;
     padding-top: 3.5rem;
@@ -517,7 +631,7 @@ h1, h2, h3, h4, h5 {
   background-image: linear-gradient(rgba(20, 33, 61, 0.6), rgba(20, 33, 61, 0.8)), url("./../images/hero-home-banner.jpg");
   background-size: cover;
   background-position: center;
-  height: 80vh;
+  height: 65rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -527,7 +641,7 @@ h1, h2, h3, h4, h5 {
     .hero-home__main {
       padding: 2rem;
       grid-column: full-start / full-end;
-      height: 70vh; } }
+      height: 60rem; } }
   .hero-home__main--heading {
     color: var(--color-light);
     font-size: 4.8rem;
@@ -546,7 +660,7 @@ h1, h2, h3, h4, h5 {
 .hero-home__aside {
   grid-column: col-start 7 / full-end;
   background-color: var(--color-grey-4);
-  height: 80vh;
+  height: 65rem;
   color: var(--color-light); }
   @media only screen and (max-width: 1024px) {
     .hero-home__aside {
@@ -605,12 +719,12 @@ h1, h2, h3, h4, h5 {
         .hero-home__aside-list--item {
           grid-column: span 2;
           grid-row: span 2;
-          max-height: 20rem; } }
+          height: 20rem; } }
       @media only screen and (max-width: 768px) {
         .hero-home__aside-list--item {
           grid-column: 1 / -1;
           grid-row: span 2;
-          max-height: 15rem; } }
+          height: 15rem; } }
 
 .nav-wrapper {
   background-color: var(--color-light);
@@ -833,6 +947,9 @@ h1, h2, h3, h4, h5 {
   -webkit-appearance: none;
   appearance: none;
   font-size: 1.4rem; }
+  @media only screen and (max-width: 768px) {
+    .nav-search__input {
+      font-size: 1.6rem; } }
   .nav-search__input::placeholder {
     color: var(--color-grey-6); }
   .nav-search__input:focus, .nav-search__input:hover {

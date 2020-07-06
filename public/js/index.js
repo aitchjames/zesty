@@ -74,9 +74,4 @@ const mainRecipeImageBG = document.querySelector(".recipe-masthead__image-bg")
 if (mainRecipeImage) {
     let color = colorThief.getColor(mainRecipeImage);
     mainRecipeImageBG.style.backgroundColor = `rgb(${color[0]}, ${color[1]}, ${color[2]})`;
-} else {
-    image.addEventListener('load', function() {
-        let color = colorThief.getColor(mainRecipeImage);
-        mainRecipeImageBG.style.backgroundColor = `rgb(${color[0]}, ${color[1]}, ${color[2]})`;
-    });
-}
+} 

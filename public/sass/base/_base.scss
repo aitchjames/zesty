@@ -7,6 +7,7 @@
 }
 
 html {
+    scroll-behavior: smooth;
     box-sizing: border-box;
     font-size: 62.5%;
 }
@@ -19,15 +20,13 @@ body {
     font-size: 1.6rem;
     min-width: 320px;
     overflow-x: hidden;    
-    scroll-behavior: smooth;
     display: flex;
     flex-direction: column;
     min-height: 100vh; 
     
     @media only screen and (max-width: $breakpoint-md) {
         min-height: auto;
-    }
-    
+    }    
 
     &.scroll .nav-wrapper {
         position: fixed;        
@@ -164,4 +163,31 @@ h1, h2, h3, h4, h5 {
             grid-column: col-start 1 / col-end 8;
         }
     }
+}
+
+.content-heading {
+    font-weight: 700;
+    margin-bottom: 1rem;
+
+    &:target::before {
+        content: "";
+        display: block;
+        height: 8rem; 
+        margin: -8rem 0 0;
+    }
+}
+
+.content-paragraph {
+    font-size: 1.6rem;
+    margin-bottom: 2rem;
+}
+
+.content-link {
+    color: var(--color-primary);
+    text-decoration: none;    
+}
+
+.tc-content {
+    grid-column: col-start 1 / col-end 8;
+    margin: 5rem 0;
 }

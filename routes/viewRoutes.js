@@ -13,12 +13,11 @@ router.get('/about', authController.isLoggedIn, viewsController.getAboutPage);
 // router.get('/newsletter', authController.isLoggedIn, viewsController.getNewletterPage);
 router.get('/careers', authController.isLoggedIn, viewsController.getCareersPage);
 router.get('/contact', authController.isLoggedIn, viewsController.getContactPage);
-// router.get('/branding', authController.isLoggedIn, viewsController.getBrandingPage);
-// router.get('/terms', authController.isLoggedIn, viewsController.getTermsPage);
-// router.get('/privacy', authController.isLoggedIn, viewsController.getPrivacyPage);
+router.get('/terms', authController.isLoggedIn, viewsController.getTermsPage);
+router.get('/privacy', authController.isLoggedIn, viewsController.getPrivacyPage);
 
 // Recipe View Routes
-// router.get('/recipes', authController.isLoggedIn, viewsController.getAllRecipes);
+router.get('/recipes', authController.isLoggedIn, viewsController.getRecipes);
 // router.get('/recipe/:slug', authController.isLoggedIn, viewsController.getRecipe);
 
 // // Login & Sign Up View Routes

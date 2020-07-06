@@ -2,12 +2,33 @@
 <main class="main-wrapper">
     <div class="grid-container">
         <div class="contact-content">
-            <h1 class="careers-content--heading">Got any questions, comments or conerns?</h1>
-            <p class="careers-content--paragraph centered subheading">We do not have any current job openings.</p>
-            <hr>
-            <p class="careers-content--paragraph muted">We are an equal opportunity employer and value diversity at our company. Women, people of color, members of the LGBTQ community, individuals with disabilities, and veterans are strongly encouraged to apply.</p>
-            </p>
+            <h1 class="contact-content--heading">Contact us</h1>
+            <h2 class="contact-content--subheading">Got any questions, comments or conerns?</h2>
+            <form class="contact-us-form" autocomplete="off">
+                <div class="contact-us-form__group">
+                    <label class="contact-us-form__label" for="name">Name</label>
+                    <input class="contact-us-form__input" id="name" type="text" placeholder="" required="required">
+                </div>
+                <div class="contact-us-form__group">
+                    <label class="contact-us-form__label" for="email">Email address</label>
+                    <input class="contact-us-form__input" id="email" type="email" placeholder="" required="required">
+                </div>
+                <div class="contact-us-form__group">
+                    <label class="contact-us-form__label" for="subject">Subject</label>
+                    <input class="contact-us-form__input" id="subject" type="text" placeholder="" required="required">
+                </div>
+                <div class="contact-us-form__group">
+                    <label class="contact-us-form__label" for="message">Message</label>
+                    <textarea class="contact-us-form__textarea" id="message" required="required" rows="6"></textarea>
+                </div>
+                <div class="contact-us-form__group">
+                    <button class="button">
+                        <span>Send Message</span>
+                    </button>
+                </div>
+            </form>
         </div>
+        <aside class="contact-aside"></aside>
     </div>
 </main>
 <%- include('includes/_footer') %>
