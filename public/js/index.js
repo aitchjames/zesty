@@ -12,7 +12,7 @@ const menuCollapsible = document.querySelectorAll(".nav-mobile__link-collapse");
 const loginForm = document.querySelector(".auth-form-login");
 const signupForm = document.querySelector(".auth-form-signup");
 const forgotPasswordForm = document.querySelector(".auth-form-forgotpassword");
-const logoutButton = document.querySelector(".button-logout");
+const logoutButton = document.querySelectorAll(".button-logout");
 
 // Mobile Menu Delegation
 if (menuIcon) {
@@ -114,7 +114,11 @@ if (mainRecipeImage) {
     mainRecipeImageBG.style.backgroundColor = `rgb(${color[0]}, ${color[1]}, ${color[2]})`;
 } 
 
-if (logoutButton) logoutButton.addEventListener("click", logout);
+if (logoutButton) {
+    logoutButton.forEach(button => {
+        button.addEventListener("click", logout);
+    })    
+} 
 
 const alertMessage = document.querySelector("body").dataset.alert;
 if (alertMessage) showAlert("success", alertMessage, 20);

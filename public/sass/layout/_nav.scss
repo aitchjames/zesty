@@ -62,6 +62,12 @@
                     width: 1.5rem;
                     fill: var(--color-grey-7);
                 }
+
+                & .profile-avatar {
+                    width: 3.5rem;
+                    height: 3.5rem;
+                    border-radius: 50%;
+                }
             }
 
             &:hover .nav-menu__panel{
@@ -127,6 +133,18 @@
                 &-link {
                     text-decoration: none;
                     color: var(--color-grey-7);  
+
+                    &.button-logout {
+                        text-decoration: none;
+                        color: var(--color-grey-7); 
+                        border: none;
+                        background-color: transparent;
+                        margin: 0;
+                        padding: 0;
+                        font-size: 1.6rem;
+                        text-align: left;
+                        cursor: pointer;
+                    }
                 }
             }
 

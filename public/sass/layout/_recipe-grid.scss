@@ -1,0 +1,24 @@
+.recipe {
+
+    &-filter {
+        grid-column: col-start 1 / col-end 8;
+    }
+
+    &-grid {
+        grid-column: col-start 1 / col-end 8;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+        grid-gap: 3rem;
+        align-items: start;
+
+        &-item {
+            width: 100%;
+            max-width: 30rem;
+
+            &__thumb {
+                width: 100%;
+                height: auto;
+            }
+        }
+    }
+}

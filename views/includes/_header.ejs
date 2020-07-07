@@ -44,7 +44,7 @@
                         <a href="#!">
                             Discover
                             <svg>
-                                <use xlink:href="images/icons.svg#icon-chevron-down"></use>
+                                <use xlink:href="/images/icons.svg#icon-chevron-down"></use>
                             </svg>
                         </a>
                         <div class="nav-menu__panel">
@@ -85,7 +85,12 @@
                     <li class="nav-menu__item"><a href="/signup" class="button">Sign up</a></li>
                     <% } %>
                     <% if (locals.user) { %>
-                    <li class="nav-menu__item"><button class="button-logout">Log out</button></li>
+                    <li class="nav-menu__item">
+                        <a href="/user/<%= locals.user.username %>">
+                            <img class="profile-avatar" src="/images/users/<%= locals.user.photo %>" alt="<%= locals.user.username %> avatar">
+                        </a>
+                    </li>
+                    <li class="nav-menu__item"><button class="button button-logout">Log out</button></li>
                     <% } %>
                 </ul>
             </nav>
@@ -116,15 +121,15 @@
             <% if (locals.user) { %>
             <div class="nav-menu__mobile-profile">
                 <a class="nav-menu__mobile-user" href="">
-                    <img src="/images/user-avatar.jpg" width="40" height="40" alt="">
-                    <span>Hayden Morran</span>
+                    <img src="/images/users/<%= locals.user.photo %>" width="40" height="40" alt="">
+                    <span><%= locals.user.name %></span>
                 </a>
                 <div class="nav-menu__mobile-profile-links">
-                    <a class="nav-menu__mobile-profile-link" href="/user/:username">My profile</a>
-                    <a class="nav-menu__mobile-profile-link" href="/user/:username/likes">Liked recipes</a>
-                    <a class="nav-menu__mobile-profile-link" href="/user/:username/favourites">My favourites</a>
+                    <a class="nav-menu__mobile-profile-link" href="/user/<%= locals.user.username %>">My profile</a>
+                    <a class="nav-menu__mobile-profile-link" href="/user/<%= locals.user.username %>/likes">Liked recipes</a>
+                    <a class="nav-menu__mobile-profile-link" href="/user/<%= locals.user.username %>/favourites">My favourites</a>
                     <a class="nav-menu__mobile-profile-link" href="/account">Account settings</a>
-                    <a class="nav-menu__mobile-profile-link" href="/logout">Log out</a>
+                    <button class="nav-menu__mobile-profile-link button-logout">Log out</button>
                 </div>
             </div>
             <% } %>

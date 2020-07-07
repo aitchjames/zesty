@@ -13,6 +13,12 @@ router.route('/:id')
     // .patch(authController.protect, authController.restrictTo('chef', 'editor', 'admin'), recipeController.uploadRecipeImages, recipeController.resizeRecipeImages, recipeController.updateRecipe)
     .delete(authController.protect, authController.restrictTo('chef', 'editor', 'admin'), recipeController.deleteRecipe);
 
+router.route('/:id/like')
+    .post(authController.protect, recipeController.likeRecipe);
+
+router.route('/:id/favourite')
+.post(authController.protect, recipeController.favouriteRecipe);
+
 // router.route('/recipe-stats')
 //     .get(recipeController.getRecipeStats);
 

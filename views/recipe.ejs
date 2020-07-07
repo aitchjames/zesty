@@ -1,0 +1,140 @@
+<%- include('includes/_header') %>
+<main class="main-wrapper">
+    <div class="grid-container recipe-masthead">
+        <div class="recipe-masthead__image">
+            <img class="recipe-masthead__image-fg" src="/images/recipe/<%= recipe.imageCover %>" alt="">
+            <div class="recipe-masthead__image-bg"></div>
+        </div>
+        <div class="recipe-masthead__content">
+            <h1 class="recipe-masthead__title"><%= recipe.name %></h1>
+            <div class="recipe-masthead__overview-stats">
+                <div class="recipe-masthead__overview-stats-item">
+                    <svg class="bi bi-heart-fill" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd" d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314z" />
+                    </svg>
+                    <span class="recipe-masthead__overview-stats-item__span">0 likes</span>
+                </div>
+                <div class="recipe-masthead__overview-stats-item">
+                    <svg class="bi bi-bookmark-fill" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd" d="M3 3a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v12l-5-3-5 3V3z" />
+                    </svg>
+                    <span class="recipe-masthead__overview-stats-item__span">0 saves</span>
+                </div>
+                <div class="recipe-masthead__overview-stats-item">
+                    <svg class="bi bi-star-fill" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.283.95l-3.523 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z" />
+                    </svg>
+                    <span class="recipe-masthead__overview-stats-item__span"><%= recipe.ratingsAverage %> rating <span class="overview-total-rating">(<%= recipe.ratingsQuantity %>)</span></span>
+                </div>
+            </div>
+            <div class="recipe-masthead__actions">
+                <a href="#!" class="button-icon button-icon__not-liked">
+                    <svg class="bi bi-heart" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd" d="M8 2.748l-.717-.737C5.6.281 2.514.878 1.4 3.053c-.523 1.023-.641 2.5.314 4.385.92 1.815 2.834 3.989 6.286 6.357 3.452-2.368 5.365-4.542 6.286-6.357.955-1.886.838-3.362.314-4.385C13.486.878 10.4.28 8.717 2.01L8 2.748zM8 15C-7.333 4.868 3.279-3.04 7.824 1.143c.06.055.119.112.176.171a3.12 3.12 0 0 1 .176-.17C12.72-3.042 23.333 4.867 8 15z" />
+                    </svg>
+                    <span>Like</span>
+                </a>
+                <a href="#!" class="button-icon button-icon__not-favourited">
+                    <svg class="bi bi-bookmark" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd" d="M8 12l5 3V3a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v12l5-3zm-4 1.234l4-2.4 4 2.4V3a1 1 0 0 0-1-1H5a1 1 0 0 0-1 1v10.234z" />
+                    </svg>
+                    <span>Save for later</span>
+                </a>
+            </div>
+        </div>
+        <div class="recipe-cooking-info">
+            <div class="recipe-cooking-info__item"><strong>Serves</strong> <span><%= recipe.servings %></span></div>
+            <div class="recipe-cooking-info__item"><strong>Prep Time</strong> <span><%= recipe.prepTime %> mins</span></div>
+            <div class="recipe-cooking-info__item"><strong>Cook Time</strong> <span><%= recipe.cookTime %> mins</span></div>
+            <div class="recipe-cooking-info__item"><strong>Difficulty</strong> <span><%= recipe.difficulty %></span></div>
+        </div>
+        <div class="recipe-cooking-sidebar">
+            <div class="recipe-cooking-ingredients">
+                <h2>Ingredients</h2>
+                <ul>
+                    <% recipe.ingredients.forEach(function(ingredient) { %>
+                    <li><%= ingredient.description %></li>
+                    <% }) %>
+                </ul>
+            </div>
+        </div>
+        <div class="recipe-cooking-main">
+            <div class="recipe-cooking-method">
+                <h2>Method</h2>
+                <ol>
+                    <% recipe.method.forEach(function(method) { %>
+                    <li><%= method %></li>
+                    <% }) %>
+                    <!-- <li>Preheat the oven to 200°C.</li>
+                    <li>Peel the apples and cut into 1.5–2cm pieces. Toss the apples and lemon juice together in a large bowl. Cut the rhubarb into 2.5cm lengths. Add to the apple with the strawberries, vanilla seeds and sugar and toss to combine. Transfer to six 250ml (1 cup) heatproof ramekins or dishes. </li>
+                    <li>To make the crumble topping, put the oats, flour, sugar and cinnamon in a medium bowl and mix to combine. Use your fingertips to rub in the butter until well combined. Sprinkle the crumble topping evenly over the fruit in the ramekins or dishes.</li>
+                    <li>Bake for 30–35 minutes, until golden and bubbling. Cover with foil if the topping is browning too quickly. Serve with vanilla ice cream.</li> -->
+                </ol>
+            </div>
+
+        </div>
+        <div class="recipe-cooking-reviews">
+            <button class="recipe-cooking-reviews__heading">
+                <h4>Reviews</h4>
+                <svg class="bi bi-star-fill" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.283.95l-3.523 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z" />
+                </svg>
+                <p class="">4.4 (890<span> reviews</span>)</p>
+                <svg class="bi bi-chevron-down" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z" />
+                </svg>
+            </button>
+            <div class="recipe-cooking-reviews__content">
+                <!-- <div class="recipe-cooking-reviews__content-review">
+                    <div class="review__user">
+                        <img class="review__photo" src="images/user-6.jpg" alt="">
+                        <div class="review__user-details">
+                            <span class="review__user-name">Mary Poppins</span>
+                            <span class="review__user-date">June 2020</span>
+                        </div>
+                    </div>
+                    <div class="review__text">
+                        <span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fuga doloremque architecto dicta animi, totam, itaque officia ex. </span>
+                    </div>
+                </div>
+                <div class="recipe-cooking-reviews__content-review">
+                    <div class="review__user">
+                        <img class="review__photo" src="images/user-6.jpg" alt="">
+                        <div class="review__user-details">
+                            <span class="review__user-name">Mary Poppins</span>
+                            <span class="review__user-date">June 2020</span>
+                        </div>
+                    </div>
+                    <div class="review__text">
+                        <span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fuga doloremque architecto dicta animi, totam, itaque officia ex. </span>
+                    </div>
+                </div>
+                <div class="recipe-cooking-reviews__content-review">
+                    <div class="review__user">
+                        <img class="review__photo" src="images/user-6.jpg" alt="">
+                        <div class="review__user-details">
+                            <span class="review__user-name">Mary Poppins</span>
+                            <span class="review__user-date">June 2020</span>
+                        </div>
+                    </div>
+                    <div class="review__text">
+                        <span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fuga doloremque architecto dicta animi, totam, itaque officia ex. </span>
+                    </div>
+                </div>
+                <div class="recipe-cooking-reviews__content-review">
+                    <div class="review__user">
+                        <img class="review__photo" src="images/user-6.jpg" alt="">
+                        <div class="review__user-details">
+                            <span class="review__user-name">Mary Poppins</span>
+                            <span class="review__user-date">June 2020</span>
+                        </div>
+                    </div>
+                    <div class="review__text">
+                        <span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fuga doloremque architecto dicta animi, totam, itaque officia ex. </span>
+                    </div>
+                </div> -->
+            </div>
+        </div>
+    </div>
+</main>
+<%- include('includes/_footer') %>

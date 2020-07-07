@@ -42,7 +42,13 @@ const userSchema = new mongoose.Schema({
         type: Boolean,
         default: true,
         select: false
-    }
+    },
+    likes: [
+        { type: mongoose.Schema.ObjectId, ref: 'Recipe' }
+    ],
+    favourites: [
+        { type: mongoose.Schema.ObjectId, ref: 'Recipe' }
+    ]
 });
 
 userSchema.pre('save', async function (next) {

@@ -19,6 +19,7 @@ const recipeSchema = new mongoose.Schema(
             type: String,
             required: [true, 'A recipe must have a cover image']
         },
+        imageThumb: String,
         servings: {
             type: Number,
             required: [true, 'A recipe must have a servings']
@@ -59,7 +60,9 @@ const recipeSchema = new mongoose.Schema(
             type: Date,
             default: Date.now(),
             select: false
-        }
+        },
+        likeCount: Number,
+        favouriteCount: Number
     },
     {
         toJSON: { virtuals: true },
@@ -78,6 +81,12 @@ recipeSchema.virtual('reviews', {
 
 // Slugify Url
 recipeSchema.pre('save', function(next) {
+    // Skip function if name was not changed
+    if (!this.isModified('name')) {
+        next()
+        return
+    }
+
     this.slug = slugify(this.name, { lower: true });
     next();
 });

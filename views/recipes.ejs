@@ -1,7 +1,24 @@
 <%- include('includes/_header') %>
 <main class="main-wrapper">
     <div class="grid-container">
-        recipes works
+        <div class="recipe-filter">
+            <span>Recipe Filters Go Here</span>
+        </div>
+        <div class="recipe-grid">
+            <% recipes.forEach(function(recipe) { %>
+            <div class="recipe-grid-item">
+                <img class="recipe-grid-item__thumb" src="/images/recipe/<%= recipe.imageCover %>" alt="">
+                <a class="recipe-grid-item__title" href="/recipe/<%= recipe.slug %>"><%= recipe.name %></a>
+            </div>
+            <% }) %>
+            <% recipes.forEach(function(recipe) { %>
+            <div class="recipe-grid-item">
+                <img class="recipe-grid-item__thumb" src="/images/recipe/<%= recipe.imageCover %>" alt="">
+                <a class="recipe-grid-item__title" href="/recipe/<%= recipe.slug %>"><%= recipe.name %></a>
+            </div>
+            <% }) %>
+        </div>
+
     </div>
 </main>
 <%- include('includes/_footer') %>

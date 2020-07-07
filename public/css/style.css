@@ -428,7 +428,7 @@ h1, h2, h3, h4, h5 {
       display: none; } }
 
 .careers-content {
-  grid-column: col-start 1 / col-end 5;
+  grid-column: col-start 1 / col-end 4;
   margin: 5rem 2rem 5rem 0; }
   @media only screen and (max-width: 768px) {
     .careers-content {
@@ -799,6 +799,10 @@ h1, h2, h3, h4, h5 {
         height: 1.5rem;
         width: 1.5rem;
         fill: var(--color-grey-7); }
+      .nav-menu__item > a .profile-avatar {
+        width: 3.5rem;
+        height: 3.5rem;
+        border-radius: 50%; }
     .nav-menu__item:hover .nav-menu__panel {
       display: block;
       cursor: default; }
@@ -845,6 +849,16 @@ h1, h2, h3, h4, h5 {
       .nav-menu__mobile-profile-link {
         text-decoration: none;
         color: var(--color-grey-7); }
+        .nav-menu__mobile-profile-link.button-logout {
+          text-decoration: none;
+          color: var(--color-grey-7);
+          border: none;
+          background-color: transparent;
+          margin: 0;
+          padding: 0;
+          font-size: 1.6rem;
+          text-align: left;
+          cursor: pointer; }
     .nav-menu__mobile-user {
       display: flex;
       align-items: center;
@@ -1021,6 +1035,22 @@ h1, h2, h3, h4, h5 {
     .nav-mobile__dropdown-item:first-of-type {
       padding: 0 0 1.5rem 0; }
 
+.recipe-filter {
+  grid-column: col-start 1 / col-end 8; }
+
+.recipe-grid {
+  grid-column: col-start 1 / col-end 8;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+  grid-gap: 3rem;
+  align-items: start; }
+  .recipe-grid-item {
+    width: 100%;
+    max-width: 30rem; }
+    .recipe-grid-item__thumb {
+      width: 100%;
+      height: auto; }
+
 .recipe-masthead {
   margin: 4rem 0; }
   .recipe-masthead__content {
@@ -1102,7 +1132,8 @@ h1, h2, h3, h4, h5 {
         margin-right: 3rem; } }
     .recipe-cooking-info__item span {
       color: var(--color-grey-7);
-      margin-left: 0.5rem; }
+      margin-left: 0.5rem;
+      text-transform: capitalize; }
       @media only screen and (max-width: 768px) {
         .recipe-cooking-info__item span {
           margin-left: 0.2rem;
