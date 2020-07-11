@@ -61,8 +61,14 @@ const recipeSchema = new mongoose.Schema(
             default: Date.now(),
             select: false
         },
-        likeCount: Number,
-        favouriteCount: Number
+        likeCount: {
+            type: Number,
+            default: 0
+        },
+        favouriteCount: {
+            type: Number,
+            default: 0
+        }
     },
     {
         toJSON: { virtuals: true },

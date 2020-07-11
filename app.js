@@ -61,7 +61,7 @@ app.use(xss());
 // Prevent parameter pollution
 app.use(
     hpp({
-        whitelist: ['servings', 'prepTime', 'cookTime', 'ratingsQuantity', 'ratingsAverage', 'difficulty']
+        whitelist: ['servings', 'prepTime', 'cookTime', 'ratingsQuantity', 'ratingsAverage', 'difficulty', 'name']
     })
 );
 

@@ -56,3 +56,26 @@ exports.favouriteRecipe = catchAsync(async (req, res, next) => {
         }
     });
 })
+
+exports.searchRecipe = catchAsync(async (req, res, next) => {
+    const query = req.params.query;
+
+    // const search = await Recipe.find(
+    //     {
+    //         $text: {
+    //             $search: query
+    //         }
+    //     }, 
+    // {
+    //     score: { $meta: 'textScore' }
+    // }).sort({
+    //     score: { $meta: 'textScore'}
+    // }).limit(30)
+
+    // TODO actually query DB
+
+    res.status(200).json({
+        status: 'success',
+        data: query
+    });
+})

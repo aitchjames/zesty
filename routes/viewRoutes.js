@@ -19,6 +19,7 @@ router.get('/privacy', authController.isLoggedIn, viewsController.getPrivacyPage
 // Recipe View Routes
 router.get('/recipes', authController.isLoggedIn, viewsController.getRecipes);
 router.get('/recipe/:slug', authController.isLoggedIn, viewsController.getRecipe);
+router.get('/search/:query', authController.isLoggedIn, viewsController.search);
 
 // // Login & Sign Up View Routes
 router.get('/login', authController.isLoggedIn, viewsController.getLoginForm);

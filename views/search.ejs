@@ -1,11 +1,18 @@
 <%- include('includes/_header') %>
 <main class="main-wrapper">
     <div class="grid-container">
-        <div class="recipe-filter">
-            <span>Recipe Filters Go Here</span>
+        <div class="recipe-search-results">
+            <h3 class="recipe-search-results__heading">
+                Search results for <%= query %>
+            </h3>
         </div>
+        <% if (search.length > 0) { %>
+        <!-- <div class="recipe-filter">
+            <span>Recipe Filters Go Here</span>
+        </div> -->
         <div class="recipe-grid">
-            <% recipes.forEach(function(recipe) { %>
+            <!-- <%= search %> -->
+            <% search.forEach(function(recipe) { %>
             <div class="recipe-grid-item">
                 <a class="recipe-grid-item__link" href="/recipe/<%= recipe.slug %>">
                     <img class="recipe-grid-item__thumb" src="/images/recipe/<%= recipe.imageCover %>" alt="">
@@ -24,7 +31,12 @@
             </div>
             <% }) %>
         </div>
-
+        <% } else { %>
+        <div class="recipe-no-results">
+            <img src="/images/no-results.jpg" alt="No search results">
+            <p>No results for <%= query %></p>
+        </div>
+        <% } %>
     </div>
 </main>
 <%- include('includes/_footer') %>

@@ -1,6 +1,7 @@
 import "@babel/polyfill";
 import ColorThief from "ColorThief";
 import { login, logout, signup, forgotPassword } from "./auth";
+import { search } from "./search";
 import { showAlert } from "./alerts";
 
 // Mobile Menu Dom Elements
@@ -9,6 +10,8 @@ const menuIconHamburger = document.querySelector(".nav-mobile-button-menu");
 const menuIconClose = document.querySelector(".nav-mobile-button-x");    
 const menuContent = document.querySelector(".nav-menu__mobile");
 const menuCollapsible = document.querySelectorAll(".nav-mobile__link-collapse");
+const desktopSearchForm = document.getElementById("desktopSearchForm");
+const mobileSearchForm = document.getElementById("mobileSearchForm");
 const loginForm = document.querySelector(".auth-form-login");
 const signupForm = document.querySelector(".auth-form-signup");
 const forgotPasswordForm = document.querySelector(".auth-form-forgotpassword");
@@ -39,6 +42,22 @@ function toggleMenu() {
     menuIconHamburger.classList.toggle("nav-mobile-button-menu__is-visible");
     menuIconClose.classList.toggle("nav-mobile-button-x__is-visible");
     menuContent.classList.toggle("nav-menu__mobile__is-visible");
+}
+
+if (desktopSearchForm) {
+    desktopSearchForm.addEventListener("submit", event => {
+        event.preventDefault()
+        const searchTerm = document.getElementById("desktopSearchInput").value;
+        search(searchTerm);
+    })
+}
+
+if (mobileSearchForm) {
+    mobileSearchForm.addEventListener("submit", event => {
+        event.preventDefault()
+        const searchTerm = document.getElementById("mobileSearchInput").value;
+        search(searchTerm);
+    })
 }
 
 if (loginForm) {
@@ -110,8 +129,15 @@ const mainRecipeImage = document.querySelector(".recipe-masthead__image-fg");
 const mainRecipeImageBG = document.querySelector(".recipe-masthead__image-bg")
 
 if (mainRecipeImage) {
-    let color = colorThief.getColor(mainRecipeImage);
-    mainRecipeImageBG.style.backgroundColor = `rgb(${color[0]}, ${color[1]}, ${color[2]})`;
+    if (mainRecipeImage.complete) {
+        let color = colorThief.getColor(mainRecipeImage);
+        mainRecipeImageBG.style.backgroundColor = `rgb(${color[0]}, ${color[1]}, ${color[2]})`;
+    } else {
+        mainRecipeImage.addEventListener('load', function() {
+            let color = colorThief.getColor(mainRecipeImage);
+            mainRecipeImageBG.style.backgroundColor = `rgb(${color[0]}, ${color[1]}, ${color[2]})`;
+        });
+    }
 } 
 
 if (logoutButton) {

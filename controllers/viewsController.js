@@ -120,6 +120,32 @@ exports.getAccount = (req, res) => {
     });
 };
 
+// Search View
+
+exports.search = catchAsync(async (req, res, next) => {
+    const query = req.params.query;
+
+    // console.log(query)
+
+    const search = await Recipe.find(
+        {
+            $text: {
+                $search: query
+            }
+        }, 
+    {
+        score: { $meta: 'textScore' }
+    }).sort({
+        score: { $meta: 'textScore'}
+    }).limit(30)
+
+    res.status(200).render('search', {
+        title: `Search results for ${query}`,
+        search,
+        query
+    });
+});
+
 
 
 // Profile View Routes

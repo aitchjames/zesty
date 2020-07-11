@@ -12,13 +12,13 @@
                     <svg class="bi bi-heart-fill" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                         <path fill-rule="evenodd" d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314z" />
                     </svg>
-                    <span class="recipe-masthead__overview-stats-item__span">0 likes</span>
+                    <span class="recipe-masthead__overview-stats-item__span"><%= recipe.likeCount %> likes</span>
                 </div>
                 <div class="recipe-masthead__overview-stats-item">
                     <svg class="bi bi-bookmark-fill" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                         <path fill-rule="evenodd" d="M3 3a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v12l-5-3-5 3V3z" />
                     </svg>
-                    <span class="recipe-masthead__overview-stats-item__span">0 saves</span>
+                    <span class="recipe-masthead__overview-stats-item__span"><%= recipe.favouriteCount %> saves</span>
                 </div>
                 <div class="recipe-masthead__overview-stats-item">
                     <svg class="bi bi-star-fill" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
@@ -65,15 +65,12 @@
                     <% recipe.method.forEach(function(method) { %>
                     <li><%= method %></li>
                     <% }) %>
-                    <!-- <li>Preheat the oven to 200°C.</li>
-                    <li>Peel the apples and cut into 1.5–2cm pieces. Toss the apples and lemon juice together in a large bowl. Cut the rhubarb into 2.5cm lengths. Add to the apple with the strawberries, vanilla seeds and sugar and toss to combine. Transfer to six 250ml (1 cup) heatproof ramekins or dishes. </li>
-                    <li>To make the crumble topping, put the oats, flour, sugar and cinnamon in a medium bowl and mix to combine. Use your fingertips to rub in the butter until well combined. Sprinkle the crumble topping evenly over the fruit in the ramekins or dishes.</li>
-                    <li>Bake for 30–35 minutes, until golden and bubbling. Cover with foil if the topping is browning too quickly. Serve with vanilla ice cream.</li> -->
                 </ol>
+                <p class="reviews-coming-soon">Reviews are coming soon</p>
             </div>
 
         </div>
-        <div class="recipe-cooking-reviews">
+        <!-- <div class="recipe-cooking-reviews">
             <button class="recipe-cooking-reviews__heading">
                 <h4>Reviews</h4>
                 <svg class="bi bi-star-fill" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
@@ -133,8 +130,8 @@
                         <span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fuga doloremque architecto dicta animi, totam, itaque officia ex. </span>
                     </div>
                 </div> -->
-            </div>
-        </div>
+    </div>
+    </div>
     </div>
 </main>
 <%- include('includes/_footer') %>

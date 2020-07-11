@@ -17,7 +17,10 @@ router.route('/:id/like')
     .post(authController.protect, recipeController.likeRecipe);
 
 router.route('/:id/favourite')
-.post(authController.protect, recipeController.favouriteRecipe);
+    .post(authController.protect, recipeController.favouriteRecipe);
+
+router.route('/search/:query')
+    .get(recipeController.searchRecipe);
 
 // router.route('/recipe-stats')
 //     .get(recipeController.getRecipeStats);

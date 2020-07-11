@@ -2,7 +2,7 @@
 
     &__main {
         grid-column: full-start / col-end 6;
-        background-image: linear-gradient(rgba(20, 33, 61, 0.6), rgba(20, 33, 61, 0.8)), url("./../images/hero-home-banner.jpg");
+        background-image: linear-gradient(rgba(20, 33, 61, 0.3), rgba(20, 33, 61, 0.8)), url("./../images/hero-home-banner.jpg");
         background-size: cover;
         background-position: center;
         height: 65rem;
@@ -10,7 +10,7 @@
         flex-direction: column;
         justify-content: center;
         align-items: flex-start;
-        padding: 8rem;
+        padding: 8rem 12rem;
 
         @media only screen and (max-width: $breakpoint-lg) {
             padding: 2rem;
