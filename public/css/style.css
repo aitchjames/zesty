@@ -3,7 +3,7 @@
   --breakpoint-md: 768px;
   --breakpoint-lg: 1024px;
   --breakpoint-xl: 1280px;
-  --font-heading: 'Inter', sans-serif;
+  --font-heading: 'Merriweather', serif;
   --font-body: 'Inter', sans-serif;
   --color-primary: rgb(246, 81, 55);
   --color-primary-dark: #d82f23;
@@ -616,7 +616,11 @@ h1, h2, h3, h4, h5 {
       color: var(--color-grey-7);
       font-weight: 400;
       text-decoration: none;
-      margin-top: 1rem; }
+      margin-top: 1rem;
+      align-self: flex-start; }
+      @media only screen and (max-width: 640px) {
+        .footer-links-list__item {
+          align-self: auto; } }
       .footer-links-list__item:hover {
         color: var(--color-grey-8); }
   .footer-ad-container {
@@ -997,7 +1001,7 @@ h1, h2, h3, h4, h5 {
 
 .nav-mobile__link {
   width: 100%;
-  padding: 0.8rem 0;
+  padding: 0.2rem 0;
   font-size: 1.6rem;
   font-family: var(--font-body);
   color: var(--color-grey-7); }
@@ -1068,6 +1072,9 @@ h1, h2, h3, h4, h5 {
   @media only screen and (max-width: 1024px) {
     .recipe-grid {
       grid-template-columns: repeat(auto-fill, minmax(25rem, 1fr)); } }
+  @media only screen and (max-width: 768px) {
+    .recipe-grid {
+      grid-gap: 2rem; } }
   .recipe-grid-item {
     width: 100%;
     display: grid;
@@ -1092,32 +1099,43 @@ h1, h2, h3, h4, h5 {
       grid-row: 2 / 3;
       grid-column: 1 / -1;
       z-index: 5;
-      background-color: var(--color-grey-2);
       color: var(--color-light);
       margin: 0;
-      padding: 1.5rem 2rem 3rem 2rem;
-      align-self: end;
-      border: 1px solid var(--color-grey-3); }
+      padding: 1.5rem 0rem 3rem 0rem;
+      align-self: end; }
     .recipe-grid-item__title {
+      font-family: var(--font-heading);
+      font-size: 2rem;
       color: var(--color-grey-9);
       text-decoration: none;
       font-weight: 700;
       margin: 0;
-      padding: 0.5rem 0 1.5rem 0;
-      border-bottom: 1px solid var(--color-grey-4); }
+      padding: 0.5rem 0 1.5rem 0; }
+    .recipe-grid-item__description {
+      color: var(--color-grey-7);
+      font-size: 1.4rem; }
     .recipe-grid-item__cooking-info {
-      margin-top: 1.5rem;
-      display: grid;
+      display: flex;
+      flex-wrap: wrap;
       gap: 1rem;
-      grid-template-columns: repeat(auto-fill, minmax(12rem, 1fr)); }
+      grid-template-columns: repeat(auto-fill, minmax(10rem, 1fr));
+      margin-bottom: 0rem; }
       .recipe-grid-item__cooking-info__item {
         color: var(--color-grey-9);
         font-size: 1.4rem;
-        font-weight: 500; }
+        font-weight: 500;
+        display: flex;
+        align-items: center;
+        margin-right: 1rem;
+        margin-bottom: 1rem; }
         .recipe-grid-item__cooking-info__item span {
           margin-left: 0.5rem;
-          text-transform: capitalize;
           color: var(--color-grey-7); }
+          .recipe-grid-item__cooking-info__item span.cap {
+            text-transform: capitalize; }
+        .recipe-grid-item__cooking-info__item svg {
+          margin-right: 0.4rem;
+          font-size: 1.8rem; }
 
 .recipe-masthead {
   margin: 4rem 0; }
@@ -1132,8 +1150,11 @@ h1, h2, h3, h4, h5 {
         grid-column: col-start 1 / col-end 8;
         grid-row: 2 / 3; } }
   .recipe-masthead__title {
+    max-width: 60rem;
     font-weight: 700;
-    font-size: 4.8rem; }
+    font-size: 4.8rem;
+    font-family: var(--font-heading);
+    margin-bottom: 2rem; }
     @media only screen and (max-width: 768px) {
       .recipe-masthead__title {
         font-size: calc(4.8rem * 0.75); } }
@@ -1193,11 +1214,15 @@ h1, h2, h3, h4, h5 {
       gap: 1.5rem;
       grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr)); } }
   .recipe-cooking-info__item {
+    display: flex;
+    align-items: center;
     margin-right: 4rem;
     margin-bottom: 1rem; }
     @media only screen and (max-width: 768px) {
       .recipe-cooking-info__item {
         margin-right: 3rem; } }
+    .recipe-cooking-info__item strong {
+      margin-left: 0.5rem; }
     .recipe-cooking-info__item span {
       color: var(--color-grey-7);
       margin-left: 0.5rem;
@@ -1233,6 +1258,7 @@ h1, h2, h3, h4, h5 {
       padding: 3.5rem 2rem;
       margin-right: 0; } }
   .recipe-cooking-ingredients h2 {
+    font-family: var(--font-heading);
     font-weight: 700;
     margin: 0;
     padding: 0 0 3rem 0; }
@@ -1246,6 +1272,7 @@ h1, h2, h3, h4, h5 {
         border-bottom: 0; }
 
 .recipe-cooking-method h2 {
+  font-family: var(--font-heading);
   font-weight: 700;
   margin: 3.5rem 0 0 0;
   padding: 0 0 3rem 0; }

@@ -5,8 +5,7 @@
         width: 100%;
         z-index: 15;
         position: fixed;
-        top: 0;
-        
+        top: 0;        
     }
 
     &-inner {        
@@ -351,7 +350,7 @@
 
     &__link {
         width: 100%;
-        padding: 0.8rem 0;
+        padding: 0.2rem 0;
         font-size: 1.6rem;
         font-family: var(--font-body);
         color: var(--color-grey-7);

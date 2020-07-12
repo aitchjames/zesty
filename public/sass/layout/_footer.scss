@@ -77,6 +77,11 @@
             font-weight: 400;
             text-decoration: none;
             margin-top: 1rem;
+            align-self: flex-start;
+
+            @media only screen and (max-width: $breakpoint-sm) {
+                align-self: auto;
+            } 
 
             &:hover {
                 color: var(--color-grey-8);

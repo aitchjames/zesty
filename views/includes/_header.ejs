@@ -13,8 +13,9 @@
     <meta name="description" content="<%= typeof(description) == 'undefined' ? 'Yoyo' : `${description}` %>" />
 
     <link rel="stylesheet" href="/css/style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
 
+    <meta name="theme-color" content="#f65137" />
     <link rel="manifest" href="/manifest.webmanifest">
 </head>
 
@@ -53,6 +54,11 @@
                                     <img src="/images/desktopnav-all-recipes.jpg" alt="">
                                     <h4>All recipes</h4>
                                     <p>Get inspired with our exciting collection of recipes</p>
+                                </a>
+                                <a href="/guides" class="nav-menu__panel-grid-item">
+                                    <img src="/images/desktopnav-food-guides.jpg" alt="">
+                                    <h4>Food guides</h4>
+                                    <p>All you need to know about creating the essentials</p>
                                 </a>
                                 <a href="/our-favourites" class="nav-menu__panel-grid-item">
                                     <img src="/images/desktopnav-our-favourites.jpg" alt="">
@@ -113,6 +119,7 @@
                     </button>
                     <div class="nav-mobile__dropdown">
                         <div><a class="nav-mobile__dropdown-item" href="/recipes">All recipes</a></div>
+                        <div><a class="nav-mobile__dropdown-item" href="/guides">Food guides</a></div>
                         <div><a class="nav-mobile__dropdown-item" href="/our-favourites">Our favourites</a></div>
                         <div><a class="nav-mobile__dropdown-item" href="/blog">Zesty blog</a></div>
                     </div>

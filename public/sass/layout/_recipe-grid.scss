@@ -44,6 +44,10 @@
         @media only screen and (max-width: $breakpoint-lg) {
             grid-template-columns: repeat(auto-fill, minmax(25rem, 1fr));
         }
+
+        @media only screen and (max-width: $breakpoint-md) {
+            grid-gap: 2rem;
+        }
         
 
         &-item {
@@ -52,7 +56,6 @@
             grid-template-columns: repeat(2, 1fr);
             grid-template-rows: 26.5rem min-content;
             overflow: hidden;
-            // border: 1px solid var(--color-grey-4);
 
             &__thumb {
                 width: 100%;
@@ -76,38 +79,55 @@
                 grid-row: 2 / 3;
                 grid-column: 1 / -1;
                 z-index: 5;
-                background-color: var(--color-grey-2);
                 color: var(--color-light);
                 margin: 0;
-                padding: 1.5rem 2rem 3rem 2rem;
+                padding: 1.5rem 0rem 3rem 0rem;
                 align-self: end;
-                border: 1px solid var(--color-grey-3);
             }
 
             &__title {
+                font-family: var(--font-heading);
+                font-size: 2rem;
                 color: var(--color-grey-9);
                 text-decoration: none;
                 font-weight: 700;
                 margin: 0;
                 padding: 0.5rem 0 1.5rem 0;
-                border-bottom: 1px solid var(--color-grey-4);
+            }
+
+            &__description {
+                color: var(--color-grey-7);
+                font-size: 1.4rem;
             }
 
             &__cooking-info {
-                margin-top: 1.5rem;
-                display: grid;
+                display: flex;
+                flex-wrap: wrap;
                 gap: 1rem;
-                grid-template-columns: repeat(auto-fill, minmax(12rem, 1fr));
+                grid-template-columns: repeat(auto-fill, minmax(10rem, 1fr));
+                margin-bottom: 0rem;
 
                 &__item {
                     color:var(--color-grey-9);
                     font-size: 1.4rem;
                     font-weight: 500;
+                    display: flex;
+                    align-items: center;
+                    margin-right: 1rem;
+                    margin-bottom: 1rem;
 
                     & span {
                         margin-left: 0.5rem;
-                        text-transform: capitalize;
                         color:var(--color-grey-7);
+
+                        &.cap {
+                            text-transform: capitalize;
+                        }
+                    }
+
+                    & svg {
+                        margin-right: 0.4rem;
+                        font-size: 1.8rem;
                     }
                 }
             }
