@@ -17,9 +17,14 @@ exports.alerts = (req, res, next) => {
 
 exports.getHomePage = catchAsync(async (req, res, next) => {
 
+    const popularRecipes = await Recipe.find().limit(4).sort({ viewCount: -1 })
+    const latestRecipes = await Recipe.find().limit(3).sort({ createdAt: -1 })
+
     res.status(200).render('index', {
         title: "Meals You Can Make Tonight",
-        description: "Woww"
+        description: "Woww",
+        popularRecipes,
+        latestRecipes
     });
 });
 
@@ -70,6 +75,8 @@ exports.getRecipe = catchAsync(async (req, res, next) => {
     if (!recipe) {
         return next(new AppError('There is no recipe with that name', 404));
     }
+
+    await Recipe.findOneAndUpdate({ slug: req.params.slug }, {$inc: { viewCount: 1 }  })
 
     res.status(200).render('recipe', {
         title: `${recipe.name}`,

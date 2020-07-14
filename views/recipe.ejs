@@ -12,13 +12,13 @@
                     <svg class="bi bi-heart-fill" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                         <path fill-rule="evenodd" d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314z" />
                     </svg>
-                    <span class="recipe-masthead__overview-stats-item__span"><%= recipe.likeCount %> likes</span>
+                    <span class="recipe-masthead__overview-stats-item__span"><%= recipe.likeCount %> <%= likeCount > 1 ? "likes" : "like" %></span>
                 </div>
                 <div class="recipe-masthead__overview-stats-item">
                     <svg class="bi bi-bookmark-fill" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                         <path fill-rule="evenodd" d="M3 3a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v12l-5-3-5 3V3z" />
                     </svg>
-                    <span class="recipe-masthead__overview-stats-item__span"><%= recipe.favouriteCount %> saves</span>
+                    <span class="recipe-masthead__overview-stats-item__span"><%= recipe.favouriteCount %> <%= favouriteCount > 1 ? "bookmarks" : "bookmark" %></span>
                 </div>
                 <div class="recipe-masthead__overview-stats-item">
                     <svg class="bi bi-star-fill" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
@@ -38,7 +38,7 @@
                     <svg class="bi bi-bookmark" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                         <path fill-rule="evenodd" d="M8 12l5 3V3a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v12l5-3zm-4 1.234l4-2.4 4 2.4V3a1 1 0 0 0-1-1H5a1 1 0 0 0-1 1v10.234z" />
                     </svg>
-                    <span>Save for later</span>
+                    <span>Bookmark</span>
                 </a>
             </div>
         </div>

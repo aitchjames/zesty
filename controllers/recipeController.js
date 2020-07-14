@@ -22,6 +22,14 @@ exports.likeRecipe = catchAsync(async (req, res, next) => {
         { [operator]: { likes: req.params.id }},
         { new: true }
     )
+    
+    if (operator == '$addToSet') {
+        await Recipe.findOneAndUpdate({ _id: req.params.id }, {$inc: { likeCount: 1 }  })
+    }
+
+    if (operator == '$pull') {
+        await Recipe.findOneAndUpdate({ _id: req.params.id }, {$inc: { likeCount: -1 }  })
+    }
 
     res.status(200).json({
         status: 'success',
@@ -45,6 +53,14 @@ exports.favouriteRecipe = catchAsync(async (req, res, next) => {
         { [operator]: { favourites: req.params.id }},
         { new: true }
     )
+
+    if (operator == '$addToSet') {
+        await Recipe.findOneAndUpdate({ _id: req.params.id }, {$inc: { favouriteCount: 1 }  })
+    }
+
+    if (operator == '$pull') {
+        await Recipe.findOneAndUpdate({ _id: req.params.id }, {$inc: { favouriteCount: -1 }  })
+    }
 
     res.status(200).json({
         status: 'success',

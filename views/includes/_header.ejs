@@ -4,9 +4,6 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png">
 
     <meta name="robots" content="index,follow" />
     <title><%= typeof(title) == "undefined" ? 'Zesty Recipes' : `${title} | Zesty Recipes` %></title>
@@ -15,8 +12,13 @@
     <link rel="stylesheet" href="/css/style.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
 
-    <meta name="theme-color" content="#f65137" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
     <link rel="manifest" href="/manifest.webmanifest">
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#f65237">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
 </head>
 
 <body class="" data-alert="">
@@ -59,11 +61,6 @@
                                     <img src="/images/desktopnav-food-guides.jpg" alt="">
                                     <h4>Food guides</h4>
                                     <p>All you need to know about creating the essentials</p>
-                                </a>
-                                <a href="/our-favourites" class="nav-menu__panel-grid-item">
-                                    <img src="/images/desktopnav-our-favourites.jpg" alt="">
-                                    <h4>Our favourites</h4>
-                                    <p>Our favourite recipes we cant get enough of</p>
                                 </a>
                                 <a href="/blog" class="nav-menu__panel-grid-item">
                                     <img src="/images/desktopnav-our-blog.jpg" alt="">
@@ -120,7 +117,6 @@
                     <div class="nav-mobile__dropdown">
                         <div><a class="nav-mobile__dropdown-item" href="/recipes">All recipes</a></div>
                         <div><a class="nav-mobile__dropdown-item" href="/guides">Food guides</a></div>
-                        <div><a class="nav-mobile__dropdown-item" href="/our-favourites">Our favourites</a></div>
                         <div><a class="nav-mobile__dropdown-item" href="/blog">Zesty blog</a></div>
                     </div>
                 </div>

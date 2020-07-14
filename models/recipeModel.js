@@ -68,6 +68,10 @@ const recipeSchema = new mongoose.Schema(
         favouriteCount: {
             type: Number,
             default: 0
+        },
+        viewCount: {
+            type: Number,
+            default: 0
         }
     },
     {

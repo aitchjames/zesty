@@ -6,10 +6,9 @@
         </div>
         <div class="recipe-grid">
             <% recipes.forEach(function(recipe) { %>
-
             <div class="recipe-grid-item">
                 <a class="recipe-grid-item__link" href="/recipe/<%= recipe.slug %>">
-                    <img class="recipe-grid-item__thumb" src="/images/recipe/<%= recipe.imageCover %>" alt="">
+                    <img class="recipe-grid-item__thumb" loading="lazy" src="/images/recipe/<%= recipe.imageCover %>" alt="Preview of <%= recipe.name %>">
                 </a>
                 <div class="recipe-grid-item__content">
                     <div class="recipe-grid-item__cooking-info">
@@ -40,7 +39,6 @@
                         <h3 class="recipe-grid-item__title"><%= recipe.name %></h3>
                     </a>
                     <p class="recipe-grid-item__description"><%= recipe.description %></p>
-
                 </div>
             </div>
             <% }) %>
