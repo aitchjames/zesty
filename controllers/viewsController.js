@@ -28,6 +28,20 @@ exports.getHomePage = catchAsync(async (req, res, next) => {
     });
 });
 
+exports.getGuidesPage = catchAsync(async (req, res, next) => {
+
+    res.status(200).render('guides', {
+       title: "Guides"
+    });
+ });
+
+ exports.getBlog = catchAsync(async (req, res, next) => {
+
+    res.status(200).render('blog', {
+       title: "Blog"
+    });
+ });
+
 exports.getAboutPage = catchAsync(async (req, res, next) => {
 
     res.status(200).render('about', {
@@ -76,6 +90,7 @@ exports.getRecipe = catchAsync(async (req, res, next) => {
         return next(new AppError('There is no recipe with that name', 404));
     }
 
+    // Update recipe page count - to help with popular recipes until more reviews and likes
     await Recipe.findOneAndUpdate({ slug: req.params.slug }, {$inc: { viewCount: 1 }  })
 
     res.status(200).render('recipe', {

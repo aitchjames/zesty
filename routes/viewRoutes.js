@@ -9,7 +9,8 @@ router.use(viewsController.alerts);
 // Various Page View Routes
 router.get('/', authController.isLoggedIn, viewsController.getHomePage);
 router.get('/about', authController.isLoggedIn, viewsController.getAboutPage);
-// router.get('/blog', authController.isLoggedIn, viewsController.getBlog);
+router.get('/guides', authController.isLoggedIn, viewsController.getGuidesPage);
+router.get('/blog', authController.isLoggedIn, viewsController.getBlog);
 // router.get('/newsletter', authController.isLoggedIn, viewsController.getNewletterPage);
 router.get('/careers', authController.isLoggedIn, viewsController.getCareersPage);
 router.get('/contact', authController.isLoggedIn, viewsController.getContactPage);

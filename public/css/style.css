@@ -232,7 +232,31 @@ h1, h2, h3, h4, h5 {
       color: var(--color-grey-8); }
 
 .zr-banner__join-now {
-  grid-column: col-start 1 / col-end 8; }
+  grid-column: col-start 1 / col-end 8;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 5rem 0;
+  margin-bottom: 5rem;
+  background-color: var(--color-grey-1); }
+
+.zr-banner__subtitle {
+  font-size: 1.6rem;
+  font-weight: 400;
+  margin: 0 0 1rem 0; }
+  @media only screen and (max-width: 768px) {
+    .zr-banner__subtitle {
+      font-size: 1.4rem; } }
+
+.zr-banner__title {
+  margin: 0 0 2rem 0;
+  font-weight: 700;
+  font-size: 2.4rem;
+  font-family: var(--font-heading); }
+  @media only screen and (max-width: 768px) {
+    .zr-banner__title {
+      font-size: 2rem;
+      text-align: center; } }
 
 .about-hero__content {
   grid-column: col-start 1 / col-end 4;
@@ -753,7 +777,48 @@ h1, h2, h3, h4, h5 {
     font-size: 2.4rem; }
 
 .home-food-guide {
-  grid-column: col-start 1 / col-end 8; }
+  grid-column: col-start 1 / col-end 8;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  margin-bottom: 3rem; }
+  @media only screen and (max-width: 1024px) {
+    .home-food-guide {
+      grid-template-columns: repeat(4, 1fr); } }
+  .home-food-guide__banner {
+    grid-column: 1 / 3; }
+    @media only screen and (max-width: 1024px) {
+      .home-food-guide__banner {
+        grid-column: 1 / 3; } }
+    @media only screen and (max-width: 768px) {
+      .home-food-guide__banner {
+        grid-column: 1 / 5; } }
+    .home-food-guide__banner-image {
+      width: 100%;
+      height: 100%;
+      object-fit: cover; }
+  .home-food-guide__content {
+    grid-column: 3 / 4;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: var(--color-grey-1);
+    padding: 3rem; }
+    @media only screen and (max-width: 1024px) {
+      .home-food-guide__content {
+        grid-column: 3 / 5; } }
+    @media only screen and (max-width: 768px) {
+      .home-food-guide__content {
+        grid-column: 1 / 5;
+        padding: 2rem; } }
+    .home-food-guide__content h3 {
+      font-family: var(--font-heading);
+      font-weight: 700;
+      font-size: 2.4rem;
+      margin-top: 0; }
+    .home-food-guide__content p {
+      margin-bottom: 2rem; }
+    .home-food-guide__content a {
+      align-self: flex-start; }
 
 .nav-wrapper {
   background-color: var(--color-light);
@@ -1119,8 +1184,6 @@ h1, h2, h3, h4, h5 {
     .recipe-grid-item__cooking-info {
       display: flex;
       flex-wrap: wrap;
-      gap: 1rem;
-      grid-template-columns: repeat(auto-fill, minmax(10rem, 1fr));
       margin-bottom: 0rem; }
       .recipe-grid-item__cooking-info__item {
         color: var(--color-grey-9);

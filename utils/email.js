@@ -15,10 +15,11 @@ module.exports = class Email {
         if (process.env.NODE_ENV === 'production') {
             // Sendgrid
             return nodemailer.createTransport({
-                service: 'SendGrid',
+                host: process.env.SENDGRID_HOST,
+                port: process.env.SENDGRID_PORT,
                 auth: {
-                user: process.env.SENDGRID_USERNAME,
-                pass: process.env.SENDGRID_PASSWORD
+                    user: process.env.SENDGRID_USERNAME,
+                    pass: process.env.SENDGRID_PASSWORD
                 }
             });
         }
@@ -36,7 +37,7 @@ module.exports = class Email {
     // Send the actual email
     async send(template, subject) {
         // Render HTML based on ejs template
-        const html = ejs.renderFile(`${__dirname}/../views/email/${template}.ejs`, {
+        const html = await ejs.renderFile(`${__dirname}/../views/email/${template}.ejs`, {
             firstName: this.firstName,
             url: this.url,
             subject

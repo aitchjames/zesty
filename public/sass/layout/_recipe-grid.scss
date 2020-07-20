@@ -103,8 +103,6 @@
             &__cooking-info {
                 display: flex;
                 flex-wrap: wrap;
-                gap: 1rem;
-                grid-template-columns: repeat(auto-fill, minmax(10rem, 1fr));
                 margin-bottom: 0rem;
 
                 &__item {

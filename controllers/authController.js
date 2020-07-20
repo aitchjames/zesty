@@ -29,7 +29,7 @@ const createSendToken = (user, statusCode, req, res) => {
         token,
         data: {
             user
-        }
+        } 
     });
 };
 

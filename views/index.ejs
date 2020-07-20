@@ -77,11 +77,22 @@
                 <% }) %>
             </div>
         </div>
+        <% if (!locals.user) { %>
         <div class="zr-banner__join-now">
-            Register with Zesty to like and favourite recipes
+            <h6 class="zr-banner__subtitle">Create your own Zesty account</h6>
+            <h3 class="zr-banner__title">Start collecting and rating your favourite recipes</h3>
+            <a class="button" href="/signup">Sign up now</a>
         </div>
+        <% } %>
         <div class="home-food-guide">
-            Food guide banner will go here
+            <div class="home-food-guide__banner">
+                <img class="home-food-guide__banner-image" src="/images/cookingguidebanner.jpg" alt="">
+            </div>
+            <div class="home-food-guide__content">
+                <h3>Food guides</h3>
+                <p>Learn about the differences of your favourite ingredients and how to use them in tasty recipes.</p>
+                <a class="button" href="/guides">View guides</a>
+            </div>
         </div>
     </div>
 </main>
