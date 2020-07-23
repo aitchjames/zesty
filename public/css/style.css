@@ -213,7 +213,7 @@ h1, h2, h3, h4, h5 {
     display: inline-flex;
     justify-content: center;
     align-items: center;
-    padding: 0.8rem 1.6rem;
+    padding: 1rem 2rem;
     border-radius: 0.4rem;
     background-color: var(--color-primary);
     color: var(--color-light);
@@ -221,9 +221,6 @@ h1, h2, h3, h4, h5 {
     cursor: pointer; }
     .button-icon span {
       margin-left: 0.75rem; }
-    .button-icon:hover {
-      color: var(--color-light);
-      background-color: var(--color-primary-dark); }
     .button-icon__not-liked {
       background-color: var(--color-grey-3);
       color: var(--color-grey-8); }
@@ -1220,6 +1217,9 @@ h1, h2, h3, h4, h5 {
     font-size: 4.8rem;
     font-family: var(--font-heading);
     margin-bottom: 2rem; }
+    @media only screen and (max-width: 1024px) {
+      .recipe-masthead__title {
+        font-size: calc(4.8rem * 0.90); } }
     @media only screen and (max-width: 768px) {
       .recipe-masthead__title {
         font-size: calc(4.8rem * 0.75); } }
@@ -1259,10 +1259,17 @@ h1, h2, h3, h4, h5 {
       grid-column: 1 / 8;
       z-index: 2; }
   .recipe-masthead__actions {
-    margin-top: 2rem; }
+    margin-top: 2rem;
+    display: flex; }
+    .recipe-masthead__actions .button-icon {
+      margin-right: 1rem;
+      font-size: 1.6rem; }
 
 .overview-total-rating {
   font-size: 1.3rem; }
+  @media only screen and (max-width: 410px) {
+    .overview-total-rating {
+      display: none; } }
 
 .recipe-cooking-info {
   margin: 10rem 0 8rem 0;
@@ -1285,16 +1292,19 @@ h1, h2, h3, h4, h5 {
     margin-bottom: 1rem; }
     @media only screen and (max-width: 768px) {
       .recipe-cooking-info__item {
-        margin-right: 3rem; } }
+        margin-right: 0rem; } }
     .recipe-cooking-info__item strong {
       margin-left: 0.5rem; }
+    @media only screen and (max-width: 640px) {
+      .recipe-cooking-info__item svg {
+        display: none; } }
     .recipe-cooking-info__item span {
       color: var(--color-grey-7);
       margin-left: 0.5rem;
       text-transform: capitalize; }
       @media only screen and (max-width: 768px) {
         .recipe-cooking-info__item span {
-          margin-left: 0.2rem;
+          margin-left: 0.5rem;
           display: block; } }
 
 .recipe-cooking-sidebar {

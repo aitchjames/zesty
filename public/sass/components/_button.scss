@@ -37,7 +37,7 @@
         display: inline-flex;
         justify-content: center;
         align-items: center;
-        padding: 0.8rem 1.6rem;
+        padding: 1rem 2rem;
         border-radius: 0.4rem;
         background-color: var(--color-primary);
         color: var(--color-light);
@@ -48,10 +48,10 @@
             margin-left: 0.75rem;
         }
 
-        &:hover {
-            color: var(--color-light);
-            background-color: var(--color-primary-dark);
-        }
+        // &:hover {
+        //     color: var(--color-light);
+        //     background-color: var(--color-primary-dark);
+        // }
 
         &__not-liked {
             background-color: var(--color-grey-3);

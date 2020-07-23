@@ -21,7 +21,7 @@
     <meta name="theme-color" content="#ffffff">
 </head>
 
-<body class="" data-alert="">
+<body class="<%= typeof(locals.user) == 'undefined' ? 'logged-out' : 'logged-in' %>" data-alert="">
     <header class="nav-wrapper">
         <div class="nav-inner">
             <div class="nav-logo">

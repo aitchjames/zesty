@@ -1,8 +1,13 @@
 import "@babel/polyfill";
 import ColorThief from "ColorThief";
+import React from "react";
+import ReactDOM from "react-dom"
+
 import { login, logout, signup, forgotPassword } from "./auth";
 import { search } from "./search";
 import { showAlert } from "./alerts";
+import LikeRecipe from "./likeRecipe";
+import BookmarkRecipe from "./bookmarkRecipe";
 
 // Mobile Menu Dom Elements
 const menuIcon = document.querySelector(".nav-mobile-button");    
@@ -148,3 +153,13 @@ if (logoutButton) {
 
 const alertMessage = document.querySelector("body").dataset.alert;
 if (alertMessage) showAlert("success", alertMessage, 20);
+
+const buttonLikeContainer = document.querySelector(".button-like__container")
+const buttonBookmarkContainer = document.querySelector(".button-bookmark__container")
+
+if (buttonLikeContainer) {
+    ReactDOM.render(<LikeRecipe />, document.querySelector(".button-like__container"));
+}
+if (buttonBookmarkContainer) {
+    ReactDOM.render(<BookmarkRecipe />, document.querySelector(".button-bookmark__container"));
+}

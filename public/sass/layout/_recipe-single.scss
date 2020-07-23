@@ -21,6 +21,10 @@
         font-family: var(--font-heading);
         margin-bottom: 2rem;
 
+        @media only screen and (max-width: $breakpoint-lg) {
+            font-size: calc(4.8rem * 0.90);
+        }
+
         @media only screen and (max-width: $breakpoint-md) {
             font-size: calc(4.8rem * 0.75);
         }
@@ -89,11 +93,21 @@
 
     &__actions {
         margin-top: 2rem;
+        display: flex;
+
+        & .button-icon {
+            margin-right: 1rem;
+            font-size: 1.6rem;
+        }
     }
 }
 
 .overview-total-rating {
     font-size: 1.3rem;
+
+    @media only screen and (max-width: $breakpoint-xsm) {
+        display: none;
+    }
 }
 
 .recipe-cooking {
@@ -124,11 +138,17 @@
             margin-bottom: 1rem;
 
             @media only screen and (max-width: $breakpoint-md) {
-                margin-right: 3rem;
+                margin-right: 0rem;
             }
 
             & strong {
                 margin-left: 0.5rem;
+            }
+
+            & svg {
+                @media only screen and (max-width: $breakpoint-sm) {
+                    display: none;
+                }
             }
 
             & span {
@@ -137,7 +157,7 @@
                 text-transform: capitalize;
 
                 @media only screen and (max-width: $breakpoint-md) {
-                    margin-left: 0.2rem;
+                    margin-left: 0.5rem;
                     display: block;
                 }
             }
