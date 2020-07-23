@@ -122,6 +122,11 @@
         & span {
             color: var(--color-grey-7);
 
+            & a {
+                text-decoration: none;
+                color: var(--color-grey-7);
+            }
+
             @media only screen and (max-width: $breakpoint-lg) {
                 margin-top: 1rem;         
                 text-align: center; 

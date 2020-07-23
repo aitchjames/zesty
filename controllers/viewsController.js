@@ -22,7 +22,7 @@ exports.getHomePage = catchAsync(async (req, res, next) => {
 
     res.status(200).render('index', {
         title: "Meals You Can Make Tonight",
-        description: "Woww",
+        description: "Zesty Recipes is the community for you, to discover new and exciting recipes.",
         popularRecipes,
         latestRecipes
     });

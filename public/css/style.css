@@ -672,6 +672,9 @@ h1, h2, h3, h4, h5 {
         flex-direction: column; } }
     .footer-bottom-container span {
       color: var(--color-grey-7); }
+      .footer-bottom-container span a {
+        text-decoration: none;
+        color: var(--color-grey-7); }
       @media only screen and (max-width: 1024px) {
         .footer-bottom-container span {
           margin-top: 1rem;
