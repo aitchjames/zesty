@@ -44,21 +44,22 @@
             display: flex;
             align-items: center;
 
+            & .button {
+                color: var(--color-light);
+                font-weight: 500;
+                padding: 1rem 2rem;
+            }
+
             & > a {
                 text-decoration: none;
                 color: var(--color-grey-7);
                 display: flex;
-                align-items: center;
-
-                &.button {
-                    color: var(--color-light);
-                    padding: 0.8rem 2rem;
-                }
+                align-items: center;             
 
                 & svg {
-                    margin-left: 0.5rem;
-                    height: 1.5rem;
-                    width: 1.5rem;
+                    margin-left: 0.8rem;
+                    height: 1.2rem;
+                    width: 1.2rem;
                     fill: var(--color-grey-7);
                 }
 

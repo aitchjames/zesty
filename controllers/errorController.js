@@ -65,8 +65,9 @@ const sendErrorProd = (err, req, res) => {
     // A) Operational, trusted error: send message to client
     if (err.isOperational) {
         console.log(err);
-        return res.status(err.statusCode).render('error', {
-            title: 'Something went wrong!',
+        return res.status(err.statusCode).render('404', {
+            title: 'Oops, the egg is frying!',
+            description: "Page has not been found",
             msg: err.message
         });
     }

@@ -53,17 +53,6 @@ h1, h2, h3, h4, h5 {
     }
 }
 
-.page-container {    
-    display: grid;
-    grid-template-rows: 90vh min-content;
-    grid-template-columns: [full-start] minmax(6rem, 1fr) [center-start] repeat(8, [col-start] minmax(min-content, 14rem) [col-end]) [center-end] minmax(6rem, 1fr) [full-end];
-
-    @media only screen and (max-width: $breakpoint-lg) {
-        grid-template-rows: 90vh min-content;
-        grid-template-columns: [full-start] minmax(3rem, 1fr) [center-start] repeat(8, [col-start] minmax(min-content, 14rem) [col-end]) [center-end] minmax(3rem, 1fr) [full-end];
-    }
-}
-
 .content-grid {
     display: grid;
     grid-template-columns: [center-start] repeat(8, [col-start] minmax(min-content, 16rem) [col-end]) [center-end];
