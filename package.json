@@ -8,7 +8,7 @@
         "dev": "nodemon ./server.js --ignore public/",
         "sass:watch": "node-sass ./public/sass/main.scss ./public/css/style.css -w",
         "watch:js": "parcel watch ./public/js/index.js --out-dir ./public/js --out-file bundle.js --no-source-maps",
-        "build:js": "parcel build ./public/js/index.js --public-url ./public/js --out-file bundle.js"
+        "build:js": "parcel build ./public/js/index.js --out-dir ./public/js --out-file bundle.js --no-source-maps"
     },
     "author": "",
     "license": "ISC",
