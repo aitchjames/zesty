@@ -30,7 +30,9 @@ app.set('views', path.join(__dirname, 'views'));
 app.use(cors());
 
 // Serving static files
-app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(path.join(__dirname, 'public'), {
+    maxAge: 2592000
+}));
 // Set security HTTP headers
 app.use(helmet());
 
