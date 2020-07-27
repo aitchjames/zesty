@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+
+<url>
+  <loc>https://zesty.recipes/</loc>
+  <lastmod>2020-07-27T03:23:29+00:00</lastmod>
+  <priority>1.00</priority>
+</url>
+<url>
+  <loc>https://zesty.recipes/recipes</loc>
+  <lastmod>2020-07-27T03:23:29+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://zesty.recipes/guides</loc>
+  <lastmod>2020-07-27T03:23:29+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://zesty.recipes/blog</loc>
+  <lastmod>2020-07-27T03:23:29+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://zesty.recipes/login</loc>
+  <lastmod>2020-07-27T03:23:29+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://zesty.recipes/signup</loc>
+  <lastmod>2020-07-27T03:23:29+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://zesty.recipes/recipe/easy-apple-tarts</loc>
+  <lastmod>2020-07-27T03:23:29+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://zesty.recipes/recipe/easy-chicken-curry</loc>
+  <lastmod>2020-07-27T03:23:29+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://zesty.recipes/recipe/quick-one-pan-gnocchi-bolognese</loc>
+  <lastmod>2020-07-27T03:23:29+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://zesty.recipes/recipe/easy-apple-glazed-ham</loc>
+  <lastmod>2020-07-27T03:23:29+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://zesty.recipes/about</loc>
+  <lastmod>2020-07-27T03:23:29+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://zesty.recipes/careers</loc>
+  <lastmod>2020-07-27T03:23:29+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://zesty.recipes/contact</loc>
+  <lastmod>2020-07-27T03:23:29+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://zesty.recipes/terms</loc>
+  <lastmod>2020-07-27T03:23:29+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://zesty.recipes/privacy</loc>
+  <lastmod>2020-07-27T03:23:29+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://zesty.recipes/recipe/dreamy-choc-chip-pancakes</loc>
+  <lastmod>2020-07-27T03:23:29+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://zesty.recipes/recipe/zucchini-slice</loc>
+  <lastmod>2020-07-27T03:23:29+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://zesty.recipes/recipe/homemade-pasta</loc>
+  <lastmod>2020-07-27T03:23:29+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://zesty.recipes/recipe/deluxe-biscoff-mallow-slice</loc>
+  <lastmod>2020-07-27T03:23:29+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://zesty.recipes/recipe/easy-bacon-and-cheese-bake</loc>
+  <lastmod>2020-07-27T03:23:29+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+</urlset>

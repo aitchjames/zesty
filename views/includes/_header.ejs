@@ -9,7 +9,8 @@
     <title><%= typeof(title) == "undefined" ? 'Zesty Recipes' : `${title} | Zesty Recipes` %></title>
     <meta name="description" content="<%= typeof(description) == 'undefined' ? 'Default description' : `${description}` %>" />
 
-    <link rel="stylesheet" href="/css/style.css">
+    <!-- <link rel="stylesheet" href="/css/style.css"> -->
+    <link rel="stylesheet" href="/css/style.css" media="print" onload="this.media='all'">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
 
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
@@ -20,7 +21,6 @@
     <meta name="msapplication-TileColor" content="#da532c">
     <meta name="theme-color" content="#ffffff">
 
-    <script data-ad-client="ca-pub-6134080329673299" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 </head>
 
 <body class="<%= typeof(locals.user) == 'undefined' ? 'logged-out' : 'logged-in' %>" data-alert="">
@@ -55,17 +55,17 @@
                         <div class="nav-menu__panel">
                             <div class="nav-menu__panel-grid">
                                 <a href="/recipes" class="nav-menu__panel-grid-item">
-                                    <img src="/images/desktopnav-all-recipes.jpg" alt="Pancake stack to represent all recipes">
+                                    <img src="/images/desktopnav-all-recipes.jpg" loading="lazy" alt="Pancake stack to represent all recipes">
                                     <h4>All recipes</h4>
                                     <p>Get inspired with our exciting collection of recipes</p>
                                 </a>
                                 <a href="/guides" class="nav-menu__panel-grid-item">
-                                    <img src="/images/desktopnav-food-guides.jpg" alt="Person rolling dough to represent food guides">
+                                    <img src="/images/desktopnav-food-guides.jpg" loading="lazy" alt="Person rolling dough to represent food guides">
                                     <h4>Food guides</h4>
                                     <p>All you need to know about creating the essentials</p>
                                 </a>
                                 <a href="/blog" class="nav-menu__panel-grid-item">
-                                    <img src="/images/desktopnav-our-blog.jpg" alt="Coffee and book to represent a blog">
+                                    <img src="/images/desktopnav-our-blog.jpg" loading="lazy" alt="Coffee and book to represent a blog">
                                     <h4>Zesty blog</h4>
                                     <p>News and announcements for all things Zesty</p>
                                 </a>
