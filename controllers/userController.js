@@ -90,6 +90,30 @@ exports.createUser = (req, res) => {
     });
 };
 
+exports.doesUsernameExist = catchAsync(async (req, res) => {
+    const { username } = req.body;
+
+    let doc = await User.findOne({username: username})
+
+    if (doc) {
+        res.json(true)
+    } else {
+        res.json(false)
+    }
+})
+
+exports.doesEmailExist = catchAsync(async (req, res) => {
+    const { email } = req.body;
+
+    let doc = await User.findOne({email: email})
+
+    if (doc) {
+        res.json(true)
+    } else {
+        res.json(false)
+    }
+})
+
 exports.getUser = factory.getOne(User);
 exports.getAllUsers = factory.getAll(User);
 // Do not update passwords with this

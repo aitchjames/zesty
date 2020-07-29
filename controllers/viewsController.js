@@ -31,14 +31,16 @@ exports.getHomePage = catchAsync(async (req, res, next) => {
 exports.getGuidesPage = catchAsync(async (req, res, next) => {
 
     res.status(200).render('guides', {
-       title: "Guides"
+       title: "Guides",
+       description: "Learn about the differences of your favourite ingredients and how to use them in tasty recipes."
     });
  });
 
  exports.getBlog = catchAsync(async (req, res, next) => {
 
     res.status(200).render('blog', {
-       title: "Blog"
+       title: "Blog",
+       description: "News and announcements for all things Zesty."
     });
  });
 
@@ -95,6 +97,7 @@ exports.getRecipe = catchAsync(async (req, res, next) => {
 
     res.status(200).render('recipe', {
         title: `${recipe.name}`,
+        description: `${recipe.description}`,
         recipe
     });
 });

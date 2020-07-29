@@ -9,6 +9,8 @@ router.post('/login', authController.login);
 router.get('/logout', authController.logout);
 router.post('/forgotPassword', authController.forgotPassword);
 router.patch('/resetPassword/:token', authController.resetPassword);
+router.post('/doesUsernameExist', userController.doesUsernameExist);
+router.post('/doesEmailExist', userController.doesEmailExist);
 
 // Protect all routes after this middleware
 router.use(authController.protect);

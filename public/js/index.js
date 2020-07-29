@@ -3,11 +3,13 @@ import ColorThief from "ColorThief";
 import React from "react";
 import ReactDOM from "react-dom"
 
-import { login, logout, signup, forgotPassword } from "./auth";
+import { logout, forgotPassword } from "./auth";
 import { search } from "./search";
 import { showAlert } from "./alerts";
 import LikeRecipe from "./likeRecipe";
 import BookmarkRecipe from "./bookmarkRecipe";
+import signupForm from "./signupForm";
+import loginForm from "./loginForm";
 
 // Mobile Menu Dom Elements
 const menuIcon = document.querySelector(".nav-mobile-button");    
@@ -17,8 +19,7 @@ const menuContent = document.querySelector(".nav-menu__mobile");
 const menuCollapsible = document.querySelectorAll(".nav-mobile__link-collapse");
 const desktopSearchForm = document.getElementById("desktopSearchForm");
 const mobileSearchForm = document.getElementById("mobileSearchForm");
-const loginForm = document.querySelector(".auth-form-login");
-const signupForm = document.querySelector(".auth-form-signup");
+// const loginForm = document.querySelector(".auth-form-login");
 const forgotPasswordForm = document.querySelector(".auth-form-forgotpassword");
 const logoutButton = document.querySelectorAll(".button-logout");
 
@@ -65,24 +66,21 @@ if (mobileSearchForm) {
     })
 }
 
-if (loginForm) {
-    loginForm.addEventListener("submit", event => {
-        event.preventDefault();
-        const email = document.getElementById("email").value;
-        const password = document.getElementById("password").value;
-        login(email, password);
-    })
+// if (loginForm) {
+//     loginForm.addEventListener("submit", event => {
+//         event.preventDefault();
+//         const email = document.getElementById("email").value;
+//         const password = document.getElementById("password").value;
+//         login(email, password);
+//     })
+// }
+
+if (document.querySelector(".auth-form-signup")) {
+    new signupForm();
 }
 
-if (signupForm) {
-    signupForm.addEventListener("submit", event => {
-       event.preventDefault();
-       const name = document.getElementById("name").value;
-       const username = document.getElementById("username").value;
-       const email = document.getElementById("email").value;
-       const password = document.getElementById("password").value;
-       signup(name, username, email, password);
-    });
+if (document.querySelector(".auth-form-login")) {
+    new loginForm();
 }
 
 if (forgotPasswordForm) {

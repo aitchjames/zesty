@@ -116,6 +116,26 @@
             }
         }
 
+        &__validation {
+            visibility: hidden;
+            opacity: 0;
+            max-height: 0;
+            transition: all 0.5s ease-out;
+
+            & p {
+                padding-top: 1rem;
+                font-size: 1.2rem;
+                color: red;
+                line-height: 1.2;
+            }
+
+            &-visible {
+                visibility: visible;
+                opacity: 1;   
+                max-height: 10rem;             
+            }
+        }
+
         &__label {
             display: flex;
             font-size: 1.6rem;
