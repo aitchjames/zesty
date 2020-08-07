@@ -29,7 +29,7 @@
     <meta property="og:site_name" content="Zesty Recipes">
     <meta property="og:title" content="<%= typeof(title) == 'undefined' ? 'Zesty Recipes' : `${title} | Zesty Recipes` %>">
     <meta property="og:description" content="<%= typeof(description) == 'undefined' ? 'Default description' : `${description}` %>">
-    <meta property="og:image" content="<%= typeof(recipe) == 'undefined' ? 'https://zesty.recipes/images/hero-home-banner.jpg' : `/images/recipe/${recipe.imageCover}` %>">
+    <meta property="og:image" content="<%= typeof(recipe) == 'undefined' ? 'https://zesty.recipes/images/hero-home-banner.jpg' : `https://zesty.recipes/images/recipe/${recipe.imageCover}` %>">
     <meta property="og:url" content="<%= pageUrl %>">
     <meta name="twitter:card" content="summary_large_image">
     <% } _%>
