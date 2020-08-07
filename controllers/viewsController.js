@@ -23,7 +23,7 @@ exports.getHomePage = catchAsync(async (req, res, next) => {
     res.status(200).render('index', {
         title: "Meals You Can Make Tonight",
         description: "Zesty Recipes is the community for you, to discover new and exciting recipes.",
-        pageUrl: `${req.protocol}://${req.get('host')}${req.originalUrl}`,
+        pageUrl: `https://${req.get('host')}${req.originalUrl}`,
         popularRecipes,
         latestRecipes
     });
@@ -34,7 +34,7 @@ exports.getGuidesPage = catchAsync(async (req, res, next) => {
     res.status(200).render('guides', {
        title: "Guides",
        description: "Learn about the differences of your favourite ingredients and how to use them in tasty recipes.",
-       pageUrl: `${req.protocol}://${req.get('host')}${req.originalUrl}`,
+       pageUrl: `https://${req.get('host')}${req.originalUrl}`,
     });
  });
 
@@ -43,7 +43,7 @@ exports.getGuidesPage = catchAsync(async (req, res, next) => {
     res.status(200).render('blog', {
        title: "Blog",
        description: "News and announcements for all things Zesty.",
-       pageUrl: `${req.protocol}://${req.get('host')}${req.originalUrl}`,
+       pageUrl: `https://${req.get('host')}${req.originalUrl}`,
     });
  });
 
@@ -51,7 +51,7 @@ exports.getAboutPage = catchAsync(async (req, res, next) => {
 
     res.status(200).render('about', {
        title: "About",
-       pageUrl: `${req.protocol}://${req.get('host')}${req.originalUrl}`,
+       pageUrl: `https://${req.get('host')}${req.originalUrl}`,
     });
  });
 
@@ -59,7 +59,7 @@ exports.getAboutPage = catchAsync(async (req, res, next) => {
 
     res.status(200).render('careers', {
        title: "Working at Zesty",
-       pageUrl: `${req.protocol}://${req.get('host')}${req.originalUrl}`,
+       pageUrl: `https://${req.get('host')}${req.originalUrl}`,
     });
  });
 
@@ -67,7 +67,7 @@ exports.getAboutPage = catchAsync(async (req, res, next) => {
 
     res.status(200).render('contact', {
        title: "Contact us",
-       pageUrl: `${req.protocol}://${req.get('host')}${req.originalUrl}`,
+       pageUrl: `https://${req.get('host')}${req.originalUrl}`,
     });
  });
 
@@ -75,7 +75,7 @@ exports.getAboutPage = catchAsync(async (req, res, next) => {
 
     res.status(200).render('terms', {
        title: "Terms and Conditions",
-       pageUrl: `${req.protocol}://${req.get('host')}${req.originalUrl}`,
+       pageUrl: `https://${req.get('host')}${req.originalUrl}`,
     });
  });
 
@@ -83,7 +83,7 @@ exports.getAboutPage = catchAsync(async (req, res, next) => {
 
     res.status(200).render('privacy', {
        title: "Privacy Policy",
-       pageUrl: `${req.protocol}://${req.get('host')}${req.originalUrl}`,
+       pageUrl: `https://${req.get('host')}${req.originalUrl}`,
     });
  });
 
@@ -106,7 +106,7 @@ exports.getRecipe = catchAsync(async (req, res, next) => {
     res.status(200).render('recipe', {
         title: `${recipe.name}`,
         description: `${recipe.description}`,
-        pageUrl: `${req.protocol}://${req.get('host')}${req.originalUrl}`,
+        pageUrl: `https://${req.get('host')}${req.originalUrl}`,
         recipe
     });
 });
@@ -117,7 +117,7 @@ exports.getRecipes = catchAsync(async (req, res, next) => {
 
     res.status(200).render('recipes', {
         title: 'All recipes',
-        pageUrl: `${req.protocol}://${req.get('host')}${req.originalUrl}`,
+        pageUrl: `https://${req.get('host')}${req.originalUrl}`,
         recipes
     });
 });
@@ -128,7 +128,7 @@ exports.getLoginForm = (req, res) => {
 
     res.status(200).render('login', {
         title: 'Log into your account',
-        pageUrl: `${req.protocol}://${req.get('host')}${req.originalUrl}`
+        pageUrl: `https://${req.get('host')}${req.originalUrl}`
     });
 };
 
@@ -136,7 +136,7 @@ exports.getSignupForm = (req, res) => {
 
     res.status(200).render('signup', {
         title: 'Create your account',
-        pageUrl: `${req.protocol}://${req.get('host')}${req.originalUrl}`,
+        pageUrl: `https://${req.get('host')}${req.originalUrl}`,
     });
 };
 
@@ -144,7 +144,7 @@ exports.getForgotPassword = (req, res) => {
 
     res.status(200).render('forgotpassword', {
     title: 'Forgot Password?',
-    pageUrl: `${req.protocol}://${req.get('host')}${req.originalUrl}`,
+    pageUrl: `https://${req.get('host')}${req.originalUrl}`,
     });
  };
 
@@ -155,7 +155,7 @@ exports.getAccount = (req, res) => {
     res.status(200).render('account', {
         title: 'Your account',
         currentPage: 'my-settings',
-        pageUrl: `${req.protocol}://${req.get('host')}${req.originalUrl}`,
+        pageUrl: `https://${req.get('host')}${req.originalUrl}`,
     });
 };
 
@@ -180,7 +180,7 @@ exports.search = catchAsync(async (req, res, next) => {
 
     res.status(200).render('search', {
         title: `Search results for ${query}`,
-        pageUrl: `${req.protocol}://${req.get('host')}${req.originalUrl}`,
+        pageUrl: `https://${req.get('host')}${req.originalUrl}`,
         search,
         query
     });
