@@ -3,13 +3,18 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
 
-    <title><%= typeof(title) == "undefined" ? 'Zesty Recipes' : `Zesty Recipes | ${title}` %></title>
+    <title><%= typeof(title) == "undefined" ? 'Zesty Recipes' : `${title} | Zesty Recipes` %></title>
+    <meta name="description" content="<%= typeof(description) == 'undefined' ? 'Default description' : `${description}` %>" />
+    <meta name="robots" content="index, follow" />
+    <meta name="googlebot" content="index, follow, max-snippet:-1, max-image-preview:large" />
+    <meta name="bingbot" content="index, follow, max-snippet:-1, max-image-preview:large" />
 
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
 
+    <!-- Favicons -->
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
@@ -17,4 +22,15 @@
     <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#f65237">
     <meta name="msapplication-TileColor" content="#da532c">
     <meta name="theme-color" content="#ffffff">
+
+    <!-- SEO Tags -->
+    <%_ if (pageUrl) { _%>
+    <link rel="canonical" href="<%= pageUrl %>" />
+    <meta property="og:site_name" content="Zesty Recipes">
+    <meta property="og:title" content="<%= typeof(title) == 'undefined' ? 'Zesty Recipes' : `${title} | Zesty Recipes` %>">
+    <meta property="og:description" content="<%= typeof(description) == 'undefined' ? 'Default description' : `${description}` %>">
+    <meta property="og:image" content="<%= typeof(recipe) == 'undefined' ? 'https://zesty.recipes/images/hero-home-banner.jpg' : `/images/recipe/${recipe.imageCover}` %>">
+    <meta property="og:url" content="<%= pageUrl %>">
+    <meta name="twitter:card" content="summary_large_image">
+    <% } _%>
 </head>

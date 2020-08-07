@@ -74,6 +74,10 @@ const recipeSchema = new mongoose.Schema(
         viewCount: {
             type: Number,
             default: 0
+        },
+        author: {
+            type: mongoose.Schema.ObjectId,
+            ref: 'User'
         }
     },
     {

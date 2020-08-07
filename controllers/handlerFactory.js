@@ -79,7 +79,7 @@ exports.getAll = Model => catchAsync(async (req, res, next) => {
         status: 'success',
         results: doc.length,
         data: {
-            data: doc
+            doc
         }
     });
 });

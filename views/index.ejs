@@ -8,7 +8,7 @@
         <div class="hero-home__aside">
             <h3 class="hero-home__aside-heading">Popular recipes</h3>
             <div class="hero-home__aside-list">
-                <% popularRecipes.forEach(function(recipe) { %>
+                <%_ popularRecipes.forEach(function(recipe) { _%>
                 <div class="hero-home__aside-list--item">
                     <a class="" href="/recipe/<%= recipe.slug %>">
                         <img class="aside-list__image" src="/images/recipe/<%= recipe.imageCover %>" alt="Preview of <%= recipe.name %>">
@@ -28,17 +28,15 @@
                             </svg>
                             <span class="cap"><%= recipe.difficulty %></span>
                         </div>
-
-
                     </div>
                 </div>
-                <% }) %>
+                <%_ }) _%>
             </div>
         </div>
         <div class="home-latest-recipes">
             <h3 class="home-latest-recipes__heading">Latest recipes</h3>
             <div class="recipe-grid">
-                <% latestRecipes.forEach(function(recipe) { %>
+                <%_ latestRecipes.forEach(function(recipe) { _%>
                 <div class="recipe-grid-item">
                     <a class="recipe-grid-item__link" href="/recipe/<%= recipe.slug %>">
                         <img class="recipe-grid-item__thumb" src="/images/recipe/<%= recipe.imageCover %>" alt="Preview of <%= recipe.name %>">
@@ -74,16 +72,16 @@
                         <p class="recipe-grid-item__description"><%= recipe.description %></p>
                     </div>
                 </div>
-                <% }) %>
+                <%_ }) _%>
             </div>
         </div>
-        <% if (!locals.user) { %>
+        <%_ if (!locals.user) { _%>
         <div class="zr-banner__join-now">
             <p class="zr-banner__subtitle">Create your own Zesty account</p>
             <h3 class="zr-banner__title">Start collecting and rating your favourite recipes</h3>
             <a class="button" href="/signup">Sign up now</a>
         </div>
-        <% } %>
+        <%_ } _%>
         <div class="home-food-guide">
             <div class="home-food-guide__banner">
                 <img class="home-food-guide__banner-image" src="/images/cookingguidebanner.jpg" alt="">

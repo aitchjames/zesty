@@ -57,8 +57,7 @@ function BookmarkRecipe() {
                 console.log("There was a problem")
             }        
         }
-    }
-   
+    }  
 
     return(
         <>
@@ -66,9 +65,5 @@ function BookmarkRecipe() {
         </>
     )
 }
-
-
-
-
 
 export default BookmarkRecipe;
